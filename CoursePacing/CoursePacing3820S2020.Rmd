@@ -1,0 +1,40 @@
+---
+title: "STT 3820 R Scripts"
+author: "Dr. Hasthika Rupasinghe"
+date: 'Last compiled: `r format(Sys.time(), "%A, %B %d, %Y - %X.")`'
+output:
+  html_document:
+    css: ../css/style.css
+    highlight: textmate
+    theme: yeti
+---
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+
+
+
+
+## Week 1: (Jan 13--17) {-}
+
+
+* No R files needed
+
+
+## Week 2: (Jan 20--24) {-}
+
+* No R files needed
+
+
+
+## Week 3 (Jan 27--Jan 31) {-}
+
+* [R codes for Ch 17 Proportions](../Lecture Notes/Ch17_proportions.html)
+
+## Week 4: (Feb 3--7) {-}
+
+

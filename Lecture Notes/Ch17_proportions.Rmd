@@ -1,0 +1,105 @@
+---
+title: "R codes for Ch 17 Proportions"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    highlight: textmate
+    theme: yeti
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
+library(tidyverse)
+```
+
+# This R script contains two main topics:{-}
+
+# Simulation of proportion with graphs
+
+```{r}
+
+p <- .4 # Population  proportion of males
+n <- 30 # Sample size
+
+# Generate a sample
+sample <- sample(c(0,1), size = n, replace = TRUE, prob=c(1-p,p)) 
+
+# Looking at the sample (optional)
+sample 
+
+# Find the proportion of men
+sum(sample)/n
+
+
+# Now repeat the above process 1000 times and find the average of proportions
+
+pro <- numeric(1000)
+
+for (i in 1:1000){
+  
+  sample <- sample(c(0,1), size = n, replace = TRUE, prob=c(1-p,p)) 
+  pro[i] <- sum(sample)/n 
+}
+
+mean(pro)
+sd(pro)
+hist(pro)
+
+# End of simulation
+```
+
+***
+
+# Using the theoretical distribution to solve problems
+
+```{r}
+
+p <- .07 # Population Propotion of interest
+n <- 233 # Sample size 
+
+#Check assumptions!!!
+n*p > 10
+n*(1-p) > 10
+
+
+# Mean and the sd of the sampling distribution for p
+meanp <- p
+sdp<- sqrt(p*(1-p)/n)
+
+meanp
+sdp
+
+```
+
+## Answring probability problems
+
+```{r}
+
+#less than for a normal
+#pnorm(value,mean,sd)
+
+pnorm(.06,meanp,sdp)
+
+#greater than for a normal
+#1-pnorm(value,mean,sd)
+
+1-pnorm(.09,meanp,sdp)
+
+#between for a normal
+#pnorm(bigvalue,mean,sd)-pnorm(smallerval,mean,sd)
+
+pnorm(.12,meanp,sdp)-pnorm(.08,meanp,sdp)
+
+# Given the probability find the quantile
+#qnorm(percentless,mean,sd)
+
+qnorm(.9,meanp,sdp)
+
+```
+
+
+
+
+
