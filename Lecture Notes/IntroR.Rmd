@@ -1,0 +1,183 @@
+---
+title: "Intro R Commands"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    highlight: textmate
+    theme: yeti
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
+library(tidyverse)
+```
+
+# Intro R commands {-}
+
+# Assignment operator
+
+```{r}
+salary <- 6
+Salary <- 4
+
+salary
+Salary
+
+# notice that Salary does NOT equal salary
+
+rm(Salary) # gets rid of upper case Salary; don't keep junk in the Global Environment!
+
+
+x <- 5
+x
+
+y <- 3
+y
+
+z <- 8
+z
+
+```
+
+
+# Regular math
+
+```{r}
+x + y
+```
+
+
+# Create vectors
+
+```{r}
+firstVec <- c(x, y, z)
+
+firstVec
+
+firstVec^2
+
+
+# create vectors with just numbers
+
+vals <- c(2,4,8)
+vals
+
+#multiply vectors together, note:  by component
+firstVec*vals
+
+#multiply vectors by constants
+2*firstVec
+```
+
+
+# Concatenate vectors
+
+```{r}
+
+cbind(firstVec,vals) #stick vectors togther in columns
+rbind(firstVec,vals) #stick vectors together in rows
+
+#Need help?
+?cbind
+
+#sequences...say values on a die with their probabilities:
+dots <- seq(1,6)
+dots
+
+probdots <- rep(1/6,6)
+probdots
+
+#Need help?
+?seq
+?rep
+
+# Add elements of a vector
+sum(dots)
+
+
+```
+
+
+# sampling 
+
+```{r}
+
+S1 <- sample(dots,size=5,replace=T,prob=probdots)
+S2 <- sample(dots,size=5,replace=T,prob=probdots)
+S1
+S2
+
+
+# big sample, tables & graphs
+S3 <- sample(dots,size=500,replace=T,prob=probdots)
+S3 
+
+table(S3)
+boxplot(S3)
+hist(S3)
+
+# statistics
+mean(S3)
+sd(S3)
+```
+
+
+# the for loop
+
+```{r}
+# Loop through the sequence 1 to 5 printing the square of each number
+
+for (j in 1:5)
+{
+  print(j^2)
+}
+
+
+# We can capture the results of our loop in a list
+# First we create a vector and then we fill in its values
+
+
+x = rep(0,5) # define a vector with zeors before we use x in the loop
+
+
+for (j in 1:5)
+{
+  x[j] = j^2
+}
+
+x
+
+#How about the sum of the first 100 squares? You try!
+
+
+```
+
+
+
+
+# matrices
+
+```{r}
+
+
+M2 <- matrix(c(1,3,5,2,4,6),nrow=2,byrow=T)
+M2
+
+M3 <- matrix(c(1,3,5,2,4,6),nrow=3,byrow=T)
+M3
+
+M4 <- matrix(c(1,3,5,2,4,6),nrow=3,byrow=F)
+M4
+
+
+```
+
+# selecting elements from a matrix
+
+```{r}
+M2[2,3] # 2nd row 3rd column 
+```
+
+
