@@ -5,7 +5,7 @@ title: "Welcome"
 
 * [Class RStudio Server](https://mathr.math.appstate.edu) (you must be registered in the course to access the server)
 
-* [R Scripts](./CoursePacing/CoursePacingS2020.html)
+* [R Scripts](./CoursePacing/CoursePacing3820S2020.html)
 
 
 * * *
