@@ -1,0 +1,28 @@
+name: "my-website"
+output_dir: "."
+navbar:
+  title: "STT 3850"
+  left:
+    - text: "Resources"
+      href: https://hasthika.github.io/resources.html
+    - text: "For Students"
+      href: https://hasthika.github.io/for-students.html
+    - text: "Syllabus"
+      href: ./Syllabus/SyllabusSTT3850S2019.html
+    - text: "Course Pacing"
+      href: ./CoursePacing/CoursePacingS2019.html
+      
+     
+  right:
+    - text: "Hasthika Rupasinghe"
+      href: https://hasthika.github.io 
+    - icon: fa-github fa-lg
+      href: https://github.com/hasthika/STT3850/         
+output:
+  html_document:
+    theme: yeti
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css  
+      
