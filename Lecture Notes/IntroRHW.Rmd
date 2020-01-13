@@ -1,0 +1,51 @@
+---
+title: "Intro R Homework"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    highlight: textmate
+    theme: yeti
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
+library(tidyverse)
+```
+
+Write an R script that would do what 1–8 describe. E-mail your script to `hasthika@appstate.edu` before 4 p.m. on Tuesday, January 28th. Your file should be named `FirstLastRIntroHW.R`.
+
+1. Create variables `X` and `Y` with the values 8 and 16 stored in them, respectively. (5 pts.)
+
+2. Calculate the values of `X + Y` and `X/Y`. (5 pts.)
+
+3. Calculate the square root of `Y`. (5 pts.)
+
+4. Create a sample of size 40 from the numbers 1-4 where 2 and 3 are twice as likely as 1 and 4. (Be sure your probabilities add to 1.) Name the sample `CLASSES`. (20 pts.)
+
+5. Calculate the mean and standard deviation of `CLASSES`. (10 pts.)
+
+6. Create a boxplot and a histogram of `CLASSES`. (10 pts.)
+
+7. Use a `for` loop to add the first 20 elements in `CLASSES`. (15 pts.)
+
+8. Verify the answer with $R$’s `sum()` function. (10 pts.)
+
+
+
+You are e-mailing a script **ONLY**; not the output from the script.
+
+**Detail Points**
+
+A. Script emailed, not output (5 pts.)
+
+B. Comments present to indicate question being answered (5 pts.)
+
+C. Good variables (5 pts.)
+
+D. Clear formatting (5 pts.)
+
+**Total = 100 points**
+
+
