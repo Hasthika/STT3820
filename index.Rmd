@@ -7,6 +7,4 @@ title: "Welcome"
 
 * [R Scripts](./CoursePacing/CoursePacing3820S2020.html)
 
-* test
-
 * * *
