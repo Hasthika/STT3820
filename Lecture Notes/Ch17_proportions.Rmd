@@ -29,23 +29,23 @@ sample <- sample(c(0,1), size = n, replace = TRUE, prob=c(1-p,p))
 # Looking at the sample (optional)
 sample 
 
-# Find the proportion of men
+# Find the proportion of men (phat for this sample)
 sum(sample)/n
 
 
 # Now repeat the above process 1000 times and find the average of proportions
 
-pro <- numeric(1000)
+phat <- numeric(1000)
 
 for (i in 1:1000){
   
   sample <- sample(c(0,1), size = n, replace = TRUE, prob=c(1-p,p)) 
-  pro[i] <- sum(sample)/n 
+  phat[i] <- sum(sample)/n 
 }
 
-mean(pro)
-sd(pro)
-hist(pro)
+mean(phat)
+sd(phat)
+hist(phat)
 
 # End of simulation
 ```
@@ -64,12 +64,12 @@ n*p > 10
 n*(1-p) > 10
 
 
-# Mean and the sd of the sampling distribution for p
-meanp <- p
-sdp<- sqrt(p*(1-p)/n)
+# Mean and the sd of the sampling distribution for phat
+meanphat <- p
+sdphat<- sqrt(p*(1-p)/n)
 
-meanp
-sdp
+meanphat
+sdphat
 
 ```
 
@@ -80,22 +80,22 @@ sdp
 #less than for a normal
 #pnorm(value,mean,sd)
 
-pnorm(.06,meanp,sdp)
+pnorm(.06,meanphat,sdphat)
 
 #greater than for a normal
 #1-pnorm(value,mean,sd)
 
-1-pnorm(.09,meanp,sdp)
+1-pnorm(.09,meanphat,sdphat)
 
 #between for a normal
 #pnorm(bigvalue,mean,sd)-pnorm(smallerval,mean,sd)
 
-pnorm(.12,meanp,sdp)-pnorm(.08,meanp,sdp)
+pnorm(.12,meanphat,sdphat)-pnorm(.08,meanphat,sdphat)
 
 # Given the probability find the quantile
 #qnorm(percentless,mean,sd)
 
-qnorm(.9,meanp,sdp)
+qnorm(.9,meanphat,sdphat)
 
 ```
 
