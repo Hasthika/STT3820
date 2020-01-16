@@ -1,0 +1,107 @@
+---
+title: "R codes for Ch 17 Mean"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    highlight: textmate
+    theme: yeti
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
+library(tidyverse)
+```
+
+# This R script contains two main topics:{-}
+
+# Simulation of mean with graphs
+
+```{r}
+
+mu <- 10 # Population mean
+sigma <- 5 # Population s.d.
+n <- 30 # Sample size
+
+
+# Generate a sample
+sample <-  rnorm(n,mu,sigma)
+
+# Looking at the sample (optional)
+sample 
+
+# Find the of the sample (xbar for the sample)
+mean(sample)
+
+
+# Now repeat the above process 1000 times and find the average of means
+
+xbar <- numeric(1000)
+
+for (i in 1:1000){
+  
+  sample <- rnorm(n,mu,sigma)
+  xbar[i] <- mean(sample) 
+}
+
+mean(xbar)
+sd(xbar)
+hist(xbar)
+
+# End of simulation
+```
+
+***
+
+# Using the theoretical distribution to solve problems
+
+```{r}
+
+p <- .07 # Population Propotion of interest
+n <- 233 # Sample size 
+
+#Check assumptions!!!
+n*p > 10
+n*(1-p) > 10
+
+
+# Mean and the sd of the sampling distribution for phat
+meanphat <- p
+sdphat<- sqrt(p*(1-p)/n)
+
+meanphat
+sdphat
+
+```
+
+## Answring probability problems
+
+```{r}
+
+#less than for a normal
+#pnorm(value,mean,sd)
+
+pnorm(.06,meanphat,sdphat)
+
+#greater than for a normal
+#1-pnorm(value,mean,sd)
+
+1-pnorm(.09,meanphat,sdphat)
+
+#between for a normal
+#pnorm(bigvalue,mean,sd)-pnorm(smallerval,mean,sd)
+
+pnorm(.12,meanphat,sdphat)-pnorm(.08,meanphat,sdphat)
+
+# Given the probability find the quantile
+#qnorm(percentless,mean,sd)
+
+qnorm(.9,meanphat,sdphat)
+
+```
+
+
+
+
+
