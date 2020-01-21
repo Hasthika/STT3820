@@ -34,6 +34,9 @@ sample
 # Find the of the sample (xbar for the sample)
 mean(sample)
 
+# How does the samaple looks like?
+hist(sample)
+
 
 # Now repeat the above process 1000 times and find the average of means
 
@@ -45,6 +48,7 @@ for (i in 1:1000){
   xbar[i] <- mean(sample) 
 }
 
+# How does the samaple MEAN looks like?
 mean(xbar)
 sd(xbar)
 hist(xbar)
