@@ -28,15 +28,17 @@ MathJax.Hub.Config({
 ## Week 2: (Jan 20--24) {-}
 
 * [Intro R codes](../Lecture Notes/IntroR.html)
-* [R codes for Ch 17 Proportions](../Lecture Notes/Ch17_proportions.html)
-* [R codes for Ch 17 Means](../Lecture Notes/Ch17_mean.html)
+* [Intro R Homework](../Lecture Notes/IntroRHW.html)
 
 
 ## Week 3 (Jan 27--Jan 31) {-}
 
-* [R codes for Ch 18](../Lecture Notes/Ch17_proportions.html1)
+* [R codes for Ch 17 Proportions](../Lecture Notes/Ch17_proportions.html)
+* [R codes for Ch 17 Means](../Lecture Notes/Ch17_mean.html)
+
 
 
 ## Week 4: (Feb 3--7) {-}
 
+* [R codes for Ch 18](../Lecture Notes/Ch17_proportions.html1)
 
