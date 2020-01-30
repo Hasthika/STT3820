@@ -62,20 +62,17 @@ hist(xbar)
 
 ```{r}
 
-p <- .07 # Population Propotion of interest
-n <- 233 # Sample size 
-
-#Check assumptions!!!
-n*p > 10
-n*(1-p) > 10
+mu <- 60 # Population mean of interest
+sigma <- 8 # Population sd of interest
+n <- 100 # Sample size 
 
 
-# Mean and the sd of the sampling distribution for phat
-meanphat <- p
-sdphat<- sqrt(p*(1-p)/n)
+# Mean and the sd of the sampling distribution for xbar
+meanxbar <- mu
+sdxbar <- sigma/sqrt(n)
 
-meanphat
-sdphat
+meanxbar
+sdxbar
 
 ```
 
@@ -86,22 +83,22 @@ sdphat
 #less than for a normal
 #pnorm(value,mean,sd)
 
-pnorm(.06,meanphat,sdphat)
+pnorm(58,meanxbar,sdxbar)
 
 #greater than for a normal
 #1-pnorm(value,mean,sd)
 
-1-pnorm(.09,meanphat,sdphat)
+1-pnorm(58,meanxbar,sdxbar)
 
 #between for a normal
 #pnorm(bigvalue,mean,sd)-pnorm(smallerval,mean,sd)
 
-pnorm(.12,meanphat,sdphat)-pnorm(.08,meanphat,sdphat)
+pnorm(58,meanxbar,sdxbar)-pnorm(58,meanxbar,sdxbar)
 
 # Given the probability find the quantile
 #qnorm(percentless,mean,sd)
 
-qnorm(.9,meanphat,sdphat)
+qnorm(.9,meanxbar,sdxbar)
 
 ```
 
