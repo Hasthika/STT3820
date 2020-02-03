@@ -1,0 +1,110 @@
+---
+title: "R codes for Ch 18"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    highlight: textmate
+    theme: yeti
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
+library(tidyverse)
+```
+
+# Confidance Intervals For proportion
+
+```{r}
+
+#######################################
+# Confidance Intervals For proportion #
+#######################################
+
+x <- 144 # successes
+n <- 330 # trials
+CIlev <- .98 # Level as a decimal
+
+prop.test(x, n, conf.level=CIlev, correct=TRUE) #preferred CI with correction...use professionally
+
+```
+
+
+## Critical value (z*)
+
+```{r}
+
+#####################################
+# Critical value (z*)               #
+#####################################
+
+CIlev <- .90 # Level as a decimal
+
+
+alpha <- 1-CIlev
+alphaovertwo <- alpha/2
+oneminusalphaovertwo <- 1- alpha/2
+
+zstar <- qnorm(oneminusalphaovertwo) 
+
+zstar
+
+```
+
+
+# Sample size
+
+You try!
+
+```{r include=FALSE}
+
+#############################
+#  Solve for sample size:   #
+#############################
+
+
+phat <- .46  # use .5 if not given in the problem
+ME <- .05 # Margin of error 
+CIlev <- .9 # CI level
+
+alpha <- 1-CIlev
+alphaovertwo <- alpha/2
+oneminusalphaovertwo <- 1- alpha/2
+zinCI <- qnorm(oneminusalphaovertwo)
+
+zinCI
+
+n <- (zinCI/ME)^2*phat*(1-phat)
+
+n
+
+cat("The required sample size is ",ceiling(n))  #ceiling function always goes up to the next integer
+```
+
+
+# Solve for confidence level
+
+You try!
+
+```{r include=FALSE}
+##############################
+# Solve for confidence level :
+##############################
+
+ME <- .03
+n <- 1507
+phat <- .49
+
+zsolved <- ME *sqrt(n/(phat*(1-phat)))
+
+zsolved
+
+arealess <- pnorm(zsolved)
+
+Conf <- (1 - 2*(1-arealess))*100
+
+cat("This is a ",Conf,"% confidence interval.")
+
+```
+
