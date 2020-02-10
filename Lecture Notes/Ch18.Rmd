@@ -22,12 +22,26 @@ library(tidyverse)
 # Confidance Intervals For proportion #
 #######################################
 
-x <- 144 # successes
-n <- 330 # trials
-CIlev <- .98 # Level as a decimal
+x <- 81 # successes
+n <- 567 # trials
+CIlev <- 0.95 # Level as a decimal
 
-prop.test(x, n, conf.level=CIlev, correct=TRUE) #preferred CI with correction...use professionally
+phat <- x/n
 
+#prop.test(x, n, conf.level=CIlev) #preferred CI with correction...use professionally
+
+alpha <- 1-CIlev
+alphaovertwo <- alpha/2
+oneminusalphaovertwo <- 1- alpha/2
+
+zstar <- qnorm(oneminusalphaovertwo) 
+
+LowP <- phat - zstar * sqrt(phat* (1-phat)/n)
+UpP <- phat + zstar * sqrt(phat *(1-phat)/n)
+
+CI <- c(LowP,UpP)
+
+cat("The asymptotic", CIlev*100, " % confidence interval for p is", CI) #concatenate
 ```
 
 
@@ -39,7 +53,7 @@ prop.test(x, n, conf.level=CIlev, correct=TRUE) #preferred CI with correction...
 # Critical value (z*)               #
 #####################################
 
-CIlev <- .90 # Level as a decimal
+CIlev <- .98 # Level as a decimal
 
 
 alpha <- 1-CIlev

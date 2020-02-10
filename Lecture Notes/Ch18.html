@@ -179,7 +179,7 @@ summary {
 
 <h1 class="title toc-ignore">R codes for Ch 18</h1>
 <h4 class="author">Dr. Hasthika Rupasinghe</h4>
-<h4 class="date">Feb 03, 2020 at 04:56:14 PM</h4>
+<h4 class="date">Feb 10, 2020 at 08:01:19 AM</h4>
 
 </div>
 
@@ -190,29 +190,34 @@ summary {
 # Confidance Intervals For proportion #
 #######################################
 
-x &lt;- 144 # successes
-n &lt;- 330 # trials
-CIlev &lt;- .98 # Level as a decimal
+x &lt;- 81 # successes
+n &lt;- 567 # trials
+CIlev &lt;- 0.95 # Level as a decimal
 
-prop.test(x, n, conf.level=CIlev, correct=TRUE) #preferred CI with correction...use professionally</code></pre>
-<pre><code>
-    1-sample proportions test with continuity correction
+phat &lt;- x/n
 
-data:  x out of n, null probability 0.5
-X-squared = 5.0939, df = 1, p-value = 0.02401
-alternative hypothesis: true p is not equal to 0.5
-98 percent confidence interval:
- 0.3729205 0.5019089
-sample estimates:
-        p 
-0.4363636 </code></pre>
+#prop.test(x, n, conf.level=CIlev) #preferred CI with correction...use professionally
+
+alpha &lt;- 1-CIlev
+alphaovertwo &lt;- alpha/2
+oneminusalphaovertwo &lt;- 1- alpha/2
+
+zstar &lt;- qnorm(oneminusalphaovertwo) 
+
+LowP &lt;- phat - zstar * sqrt(phat* (1-phat)/n)
+UpP &lt;- phat + zstar * sqrt(phat *(1-phat)/n)
+
+CI &lt;- c(LowP,UpP)
+
+cat(&quot;The asymptotic&quot;, CIlev*100, &quot; % confidence interval for p is&quot;, CI) #concatenate</code></pre>
+<pre><code>The asymptotic 95  % confidence interval for p is 0.1140544 0.1716599</code></pre>
 <div id="critical-value-z" class="section level2">
 <h2><span class="header-section-number">1.1</span> Critical value (z*)</h2>
 <pre class="r"><code>#####################################
 # Critical value (z*)               #
 #####################################
 
-CIlev &lt;- .90 # Level as a decimal
+CIlev &lt;- .98 # Level as a decimal
 
 
 alpha &lt;- 1-CIlev
@@ -222,7 +227,7 @@ oneminusalphaovertwo &lt;- 1- alpha/2
 zstar &lt;- qnorm(oneminusalphaovertwo) 
 
 zstar</code></pre>
-<pre><code>[1] 1.644854</code></pre>
+<pre><code>[1] 2.326348</code></pre>
 </div>
 </div>
 <div id="sample-size" class="section level1">
