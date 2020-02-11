@@ -103,3 +103,26 @@ CI <- c(LowMu, UpMu)
 cat("The ", CIlev*100, " % confidence interval for mu is", CI)
 ```
 
+# Sample size to estimate $\mu$ within a given ME
+
+You write!
+
+```{r include=FALSE}
+CIlev <- .95
+s <- 29.31
+ME <- 0.15
+
+alpha <- 1-CIlev
+alphaovertwo <- alpha/2
+oneminusalphaovertwo <- 1- alpha/2
+zinCI <- qnorm(oneminusalphaovertwo)
+
+nprelim <- (zinCI * s/ME)^2
+df <- nprelim-1
+
+tstar <- qt(oneminusalphaovertwo,df)
+
+nfinal <- (tstar * s/ME)^2
+ceiling(nfinal)
+```
+
