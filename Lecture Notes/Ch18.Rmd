@@ -69,29 +69,26 @@ zstar
 
 # Sample size
 
-You try!
 
-```{r include=FALSE}
+
+```{r}
 
 #############################
 #  Solve for sample size:   #
 #############################
 
 
-phat <- .46  # use .5 if not given in the problem
-ME <- .05 # Margin of error 
-CIlev <- .9 # CI level
+phatstar <- 0.5  # use .5 if not given in the problem
+ME <- .2 # Margin of error 
+CIlev <- .95 # CI level
 
 alpha <- 1-CIlev
 alphaovertwo <- alpha/2
 oneminusalphaovertwo <- 1- alpha/2
-zinCI <- qnorm(oneminusalphaovertwo)
+zstar <- qnorm(oneminusalphaovertwo)
 
-zinCI
+n <- (zstar/ME)^2*phatstar*(1-phatstar)
 
-n <- (zinCI/ME)^2*phat*(1-phat)
-
-n
 
 cat("The required sample size is ",ceiling(n))  #ceiling function always goes up to the next integer
 ```
