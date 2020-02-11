@@ -42,3 +42,9 @@ MathJax.Hub.Config({
 
 * [R codes for Ch 18](../Lecture Notes/Ch18.html)
 
+## Week 5: (Feb 10--14) {-}
+
+* [R codes for Ch 19](../Lecture Notes/Ch19.html)
+
+
+

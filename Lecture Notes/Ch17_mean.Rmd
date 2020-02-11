@@ -62,9 +62,9 @@ hist(xbar)
 
 ```{r}
 
-mu <- 60 # Population mean of interest
-sigma <- 8 # Population sd of interest
-n <- 100 # Sample size 
+mu <- 6.1 # Population mean of interest
+sigma <- 0.08 # Population sd of interest
+n <- 20 # Sample size 
 
 
 # Mean and the sd of the sampling distribution for xbar
@@ -83,12 +83,12 @@ sdxbar
 #less than for a normal
 #pnorm(value,mean,sd)
 
-pnorm(58,meanxbar,sdxbar)
+pnorm(6,meanxbar,sdxbar)
 
 #greater than for a normal
 #1-pnorm(value,mean,sd)
 
-1-pnorm(58,meanxbar,sdxbar)
+1-pnorm(6,meanxbar,sdxbar)
 
 #between for a normal
 #pnorm(bigvalue,mean,sd)-pnorm(smallerval,mean,sd)
