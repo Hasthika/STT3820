@@ -36,8 +36,8 @@ oneminusalphaovertwo <- 1- alpha/2
 
 zstar <- qnorm(oneminusalphaovertwo) 
 
-ME <- zstar * sqrt(phat* (1-phat)/n)
-ME
+#ME <- zstar * sqrt(phat* (1-phat)/n) # If you are only looking for the ME, remove the pound signs and run these two lines
+#ME
 
 LowP <- phat - zstar * sqrt(phat* (1-phat)/n)
 UpP <- phat + zstar * sqrt(phat *(1-phat)/n)
