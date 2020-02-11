@@ -179,7 +179,7 @@ summary {
 
 <h1 class="title toc-ignore">R codes for Ch 18</h1>
 <h4 class="author">Dr. Hasthika Rupasinghe</h4>
-<h4 class="date">Feb 11, 2020 at 09:58:36 AM</h4>
+<h4 class="date">Feb 11, 2020 at 11:54:26 AM</h4>
 
 </div>
 
@@ -204,7 +204,10 @@ oneminusalphaovertwo &lt;- 1- alpha/2
 
 zstar &lt;- qnorm(oneminusalphaovertwo) 
 
-LowP &lt;- phat - zstar * sqrt(phat* (1-phat)/n)
+ME &lt;- zstar * sqrt(phat* (1-phat)/n)
+ME</code></pre>
+<pre><code>[1] 0.02880276</code></pre>
+<pre class="r"><code>LowP &lt;- phat - zstar * sqrt(phat* (1-phat)/n)
 UpP &lt;- phat + zstar * sqrt(phat *(1-phat)/n)
 
 CI &lt;- c(LowP,UpP)
@@ -254,7 +257,23 @@ cat(&quot;The required sample size is &quot;,ceiling(n))  #ceiling function alwa
 </div>
 <div id="solve-for-confidence-level" class="section level1">
 <h1><span class="header-section-number">3</span> Solve for confidence level</h1>
-<p>You try!</p>
+<p>Example: Ch18 HW2: A newspaper reports that the governor’s approval rating stands at 49%. The article adds that the poll is based on a random sample of 3392 adults and has a margin of error of 2%. What level of confidence did the pollsters use?</p>
+<pre class="r"><code>##############################
+# Solve for confidence level :
+##############################
+
+ME &lt;- .02
+n &lt;- 3392
+phat &lt;- .49
+
+zsolved &lt;- ME *sqrt(n/(phat*(1-phat)))
+
+arealess &lt;- pnorm(zsolved)
+
+Conf &lt;- (1 - 2*(1-arealess))*100
+
+cat(&quot;This is a &quot;,Conf,&quot;% confidence interval.&quot;)</code></pre>
+<pre><code>This is a  98.01992 % confidence interval.</code></pre>
 </div>
 
 
