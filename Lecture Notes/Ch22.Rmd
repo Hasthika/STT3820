@@ -1,5 +1,5 @@
 ---
-title: "R codes for Ch 25"
+title: "R codes for Ch 22: Two Proportions"
 author: "Dr. Hasthika Rupasinghe"
 date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
 output:
