@@ -16,6 +16,34 @@ library(tidyverse)
 ```
 
 
+
+
+# CI for single mean $\mu$
+
+```{r}
+ybar <- 12.5
+s <- 2
+n <- 25
+CIlev <- .95
+
+
+df <- n-1
+
+alpha <- 1-CIlev
+alphaovertwo <- alpha/2
+oneminusalphaovertwo <- 1- alpha/2
+tstar <- qt(oneminusalphaovertwo,df)
+
+tstar #t in a CI formula
+
+LowMu <- ybar - tstar * s/sqrt(n)
+UpMu <- ybar + tstar * s/sqrt(n)
+
+CI <- c(LowMu, UpMu)
+
+cat("The ", CIlev*100, " % confidence interval for mu is", CI)
+```
+
 # Testing Hypotheses about mean $\mu$
 
 #### Step 0:  Find(or enter) the sample mean ($\bar{y}$) and standard deviation ($s$) and $n${-}
@@ -61,7 +89,6 @@ GTPval<- 1-pt(tstat,df)
 #not equal
 NEPval <- 2*pt(-abs(tstat), df)
 
-cat("P-value is")
 list(Less=LTPval,Greater=GTPval,NotEqual=NEPval)
 
 ```
@@ -77,32 +104,6 @@ list(Less=LTPval,Greater=GTPval,NotEqual=NEPval)
 # End of Hypotheses about the mean
 ```
 
-
-# CI for single mean $\mu$
-
-```{r}
-ybar <- 12.5
-s <- 2
-n <- 25
-CIlev <- .95
-
-
-df <- n-1
-
-alpha <- 1-CIlev
-alphaovertwo <- alpha/2
-oneminusalphaovertwo <- 1- alpha/2
-tstar <- qt(oneminusalphaovertwo,df)
-
-tstar #t in a CI formula
-
-LowMu <- ybar - tstar * s/sqrt(n)
-UpMu <- ybar + tstar * s/sqrt(n)
-
-CI <- c(LowMu, UpMu)
-
-cat("The ", CIlev*100, " % confidence interval for mu is", CI)
-```
 
 # Sample size to estimate $\mu$ within a given ME
 

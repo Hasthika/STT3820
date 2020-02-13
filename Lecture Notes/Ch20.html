@@ -179,20 +179,45 @@ summary {
 
 <h1 class="title toc-ignore">R codes for Ch 20</h1>
 <h4 class="author">Dr. Hasthika Rupasinghe</h4>
-<h4 class="date">Feb 11, 2020 at 01:22:18 PM</h4>
+<h4 class="date">Feb 13, 2020 at 11:35:10 AM</h4>
 
 </div>
 
 <div id="TOC">
 <ul>
-<li><a href="#testing-hypotheses-about-mean-mu"><span class="toc-section-number">1</span> Testing Hypotheses about mean <span class="math inline">\(\mu\)</span></a></li>
-<li><a href="#ci-for-single-mean-mu"><span class="toc-section-number">2</span> CI for single mean <span class="math inline">\(\mu\)</span></a></li>
+<li><a href="#ci-for-single-mean-mu"><span class="toc-section-number">1</span> CI for single mean <span class="math inline">\(\mu\)</span></a></li>
+<li><a href="#testing-hypotheses-about-mean-mu"><span class="toc-section-number">2</span> Testing Hypotheses about mean <span class="math inline">\(\mu\)</span></a></li>
 <li><a href="#sample-size-to-estimate-mu-within-a-given-me"><span class="toc-section-number">3</span> Sample size to estimate <span class="math inline">\(\mu\)</span> within a given ME</a></li>
 </ul>
 </div>
 
+<div id="ci-for-single-mean-mu" class="section level1">
+<h1><span class="header-section-number">1</span> CI for single mean <span class="math inline">\(\mu\)</span></h1>
+<pre class="r"><code>ybar &lt;- 12.5
+s &lt;- 2
+n &lt;- 25
+CIlev &lt;- .95
+
+
+df &lt;- n-1
+
+alpha &lt;- 1-CIlev
+alphaovertwo &lt;- alpha/2
+oneminusalphaovertwo &lt;- 1- alpha/2
+tstar &lt;- qt(oneminusalphaovertwo,df)
+
+tstar #t in a CI formula</code></pre>
+<pre><code>[1] 2.063899</code></pre>
+<pre class="r"><code>LowMu &lt;- ybar - tstar * s/sqrt(n)
+UpMu &lt;- ybar + tstar * s/sqrt(n)
+
+CI &lt;- c(LowMu, UpMu)
+
+cat(&quot;The &quot;, CIlev*100, &quot; % confidence interval for mu is&quot;, CI)</code></pre>
+<pre><code>The  95  % confidence interval for mu is 11.67444 13.32556</code></pre>
+</div>
 <div id="testing-hypotheses-about-mean-mu" class="section level1">
-<h1><span class="header-section-number">1</span> Testing Hypotheses about mean <span class="math inline">\(\mu\)</span></h1>
+<h1><span class="header-section-number">2</span> Testing Hypotheses about mean <span class="math inline">\(\mu\)</span></h1>
 <div id="step-0-findor-enter-the-sample-mean-bary-and-standard-deviation-s-and-n" class="section level4 unnumbered">
 <h4>Step 0: Find(or enter) the sample mean (<span class="math inline">\(\bar{y}\)</span>) and standard deviation (<span class="math inline">\(s\)</span>) and <span class="math inline">\(n\)</span></h4>
 <pre class="r"><code>ybar &lt;- 12.5
@@ -229,9 +254,7 @@ GTPval&lt;- 1-pt(tstat,df)
 #not equal
 NEPval &lt;- 2*pt(-abs(tstat), df)
 
-cat(&quot;P-value is&quot;)</code></pre>
-<pre><code>P-value is</code></pre>
-<pre class="r"><code>list(Less=LTPval,Greater=GTPval,NotEqual=NEPval)</code></pre>
+list(Less=LTPval,Greater=GTPval,NotEqual=NEPval)</code></pre>
 <pre><code>$Less
 [1] 0.9999991
 
@@ -251,31 +274,6 @@ $NotEqual
 
 # End of Hypotheses about the mean</code></pre>
 </div>
-</div>
-<div id="ci-for-single-mean-mu" class="section level1">
-<h1><span class="header-section-number">2</span> CI for single mean <span class="math inline">\(\mu\)</span></h1>
-<pre class="r"><code>ybar &lt;- 12.5
-s &lt;- 2
-n &lt;- 25
-CIlev &lt;- .95
-
-
-df &lt;- n-1
-
-alpha &lt;- 1-CIlev
-alphaovertwo &lt;- alpha/2
-oneminusalphaovertwo &lt;- 1- alpha/2
-tstar &lt;- qt(oneminusalphaovertwo,df)
-
-tstar #t in a CI formula</code></pre>
-<pre><code>[1] 2.063899</code></pre>
-<pre class="r"><code>LowMu &lt;- ybar - tstar * s/sqrt(n)
-UpMu &lt;- ybar + tstar * s/sqrt(n)
-
-CI &lt;- c(LowMu, UpMu)
-
-cat(&quot;The &quot;, CIlev*100, &quot; % confidence interval for mu is&quot;, CI)</code></pre>
-<pre><code>The  95  % confidence interval for mu is 11.67444 13.32556</code></pre>
 </div>
 <div id="sample-size-to-estimate-mu-within-a-given-me" class="section level1">
 <h1><span class="header-section-number">3</span> Sample size to estimate <span class="math inline">\(\mu\)</span> within a given ME</h1>
