@@ -16,6 +16,34 @@ library(tidyverse)
 ```
 
 
+
+
+# CI for single mean $\mu$
+
+```{r}
+ybar <- 12.5
+s <- 2
+n <- 25
+CIlev <- .95
+
+
+df <- n-1
+
+alpha <- 1-CIlev
+alphaovertwo <- alpha/2
+oneminusalphaovertwo <- 1- alpha/2
+tstar <- qt(oneminusalphaovertwo,df)
+
+tstar #t in a CI formula
+
+LowMu <- ybar - tstar * s/sqrt(n)
+UpMu <- ybar + tstar * s/sqrt(n)
+
+CI <- c(LowMu, UpMu)
+
+cat("The ", CIlev*100, " % confidence interval for mu is", CI)
+```
+
 # Testing Hypotheses about mean $\mu$
 
 #### Step 0:  Find(or enter) the sample mean ($\bar{y}$) and standard deviation ($s$) and $n${-}
@@ -61,7 +89,6 @@ GTPval<- 1-pt(tstat,df)
 #not equal
 NEPval <- 2*pt(-abs(tstat), df)
 
-cat("P-value is")
 list(Less=LTPval,Greater=GTPval,NotEqual=NEPval)
 
 ```
@@ -77,32 +104,6 @@ list(Less=LTPval,Greater=GTPval,NotEqual=NEPval)
 # End of Hypotheses about the mean
 ```
 
-
-# CI for single mean $\mu$
-
-```{r}
-ybar <- 12.5
-s <- 2
-n <- 25
-CIlev <- .95
-
-
-df <- n-1
-
-alpha <- 1-CIlev
-alphaovertwo <- alpha/2
-oneminusalphaovertwo <- 1- alpha/2
-tstar <- qt(oneminusalphaovertwo,df)
-
-tstar #t in a CI formula
-
-LowMu <- ybar - tstar * s/sqrt(n)
-UpMu <- ybar + tstar * s/sqrt(n)
-
-CI <- c(LowMu, UpMu)
-
-cat("The ", CIlev*100, " % confidence interval for mu is", CI)
-```
 
 # Sample size to estimate $\mu$ within a given ME
 
@@ -125,5 +126,21 @@ tstar <- qt(oneminusalphaovertwo,df)
 
 nfinal <- (tstar * s/ME)^2
 ceiling(nfinal)
+```
+
+# Graphs to check if a given data set is nearly normal 
+
+```{r}
+
+myData <- c(10.26, 10.35,  8.12, 13.21, 11.52, 12.26,  8.15,  7.71,  7.29, 10.93, 10.91,  6.54, 11.16,  9.92,  9.19,  6.93, 12.04,  9.55, 14.07, 10.03)
+
+# Methods I: Histogram - If the graph look symmetric and bell shaped data is nearly normal 
+
+hist(myData)
+
+# Methods II: QQ plot - If the plotted points follow the identity line, data is nearly normal 
+
+qqnorm(myData)
+
 ```
 
