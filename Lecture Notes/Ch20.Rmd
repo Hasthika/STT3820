@@ -112,7 +112,7 @@ You write!
 ```{r include=FALSE}
 CIlev <- .95
 s <- 29.31
-ME <- 0.15
+ME <- 0.02
 
 alpha <- 1-CIlev
 alphaovertwo <- alpha/2
