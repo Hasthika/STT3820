@@ -50,3 +50,7 @@ MathJax.Hub.Config({
 
 * [R codes for Ch 20](../Lecture Notes/Ch20.html)
 
+## Data for Future {-}
+
+* [Atlanta Regression](../Lecture Notes/AtlantaRegression.csv)
+

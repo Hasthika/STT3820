@@ -1,5 +1,5 @@
 ---
-title: "R codes for Ch 19"
+title: "R codes for Ch 25"
 author: "Dr. Hasthika Rupasinghe"
 date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
 output:
@@ -14,72 +14,3 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align =
 library(tidyverse)
 ```
 
-
-# Testing Hypotheses about proportions{-}
-
-
-#### Step 1:  Formulate Hypotheses (PARAMETERS) {-}
-
-```{r}
-#Step 1:  Formulate Hypotheses (PARAMETERS)
-# Assign the value from H0 to p
-p0 <- .9
-```
-
-
-#### Step 2:  Calcualte the standardized test statistic {-}
-```{r}
-n <- 400
-phat <- 376/400 #or a percent if given
-
-zstat <- (phat - p0)/sqrt(p0*(1-p0)/n)
-
-cat("The standardized test statistic is",zstat)
-```
-
-#### Step 3:  Calcualte the P-value {-}
-
-```{r}
-#P-value = P(get what you got or more when Ho is true)
-
-#less than
-LTPval <- pnorm(zstat)
-#greater than
-GTPval <- 1-pnorm(zstat)
-#not equal
-NEPval <- 2*pnorm(-abs(zstat))
-
-cat("P-value is")
-list(Less=LTPval,Greater=GTPval,NotEqual=NEPval)
-
-```
-
-#### Step 4: Conclusion {-}
-```{r}
-#Statistical conclusion: A) Reject Ho if P-val < alpha (use .05 if none given)
-#                         B) Fail to reject Ho if P-val > alpha
-
-#English conclusion: A) There IS evidence of Ha (written to match problem)
-#                     B) There is NOT evidence of Ha.
-
-# End of Hypotheses about proportions
-
-
-
-```
-
-### Checking assumptions {-}
-```{r}
-# Check assumptions
-
-#Independence
-#Randomization
-#Less than 10% of the population in the sample
-#Success/Failure
-
-n <- 400
-
-n*p0 > 10 
-n*(1-p0) >10
-#need this to be TRUE TRUE to continue
-```
