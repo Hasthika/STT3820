@@ -22,7 +22,7 @@ MathJax.Hub.Config({
 ## Week 1: (Jan 13--17) {-}
 
 
-* No R files needed
+* No R scripts are needed
 
 
 ## Week 2: (Jan 20--24) {-}
@@ -52,7 +52,7 @@ MathJax.Hub.Config({
 
 ## Week 5: (Feb 24--28) {-}
 
-* [R codes for Ch 21](../Lecture Notes/Ch21.html)
+* No new R scripts are needed (for ch 21 use the previous scripts)
 
 ## Week 5: (Mar 2--6) {-}
 
