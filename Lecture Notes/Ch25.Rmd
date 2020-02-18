@@ -141,12 +141,12 @@ confint(model, level=.95) # 95% CI for betas
 model <- lm(y ~ x)
 
 #confidence interval for the new observation 700
-predict(lm(y~x), data.frame(x=700),interval="conf",level=.95) #confidence interval
+predict(model, data.frame(x=700),interval="conf",level=.95) #confidence interval
 
 model <- lm(y ~ x)
 
 #prediction interval for the new observation 700
-predict(lm(y~x), data.frame(x=700),interval="pred",level=.95) #prediction interval
+predict(model, data.frame(x=700),interval="pred",level=.95) #prediction interval
 
 ```
 

@@ -1,0 +1,83 @@
+---
+title: "R codes for Ch 24"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    toc: true
+    highlight: textmate
+    theme: yeti
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
+library(tidyverse)
+```
+
+
+# Intro: How does Chi-square distribution looks like.
+
+```{r}
+# Codes Optional
+x <- seq(0,20,.1) #sequence from, to, by
+fx <- dchisq(x,df=5) #density of a chisquare
+plot(x,fx,type="l") #type = lines
+
+```
+
+# Test 1: Goodness of fit
+
+```{r}
+
+################################################################
+# Test 1
+# Goodness of fit = table matches what you expect...one variable 
+# Ho:distribution matches stated
+################################################################
+
+
+grades <- c("A", "B", "C", "D", "F")
+obs <- c(89, 121, 78, 25, 12)
+exppercent <- c(0.15, 0.3, 0.4, 0.1, 0.05)
+
+chisq.test(obs,p=exppercent)
+```
+
+# Test 2: Homogeneity
+
+```{r}
+################################################################
+# Test 2
+# Homogeneity = one variable, comparing groups to one another  
+# Ho:  distribution same across groups
+################################################################
+
+shows <- matrix(c(50, 30, 20, 50, 80, 70), ncol=3, byrow=TRUE)
+colnames(shows)<-c("Lone Ranger", "Sesame St", "The Simpsons")
+rownames(shows)<-c("Boys", "Girls")
+
+testtable <- as.table(shows)
+testtable
+
+chisq.test(testtable)
+```
+
+# Test 3: Independence
+
+```{r}
+################################################################
+# Test 3
+# Independence = two variables 
+# Ho: no association between row and column
+################################################################
+
+meningitis <- matrix(c(30, 72, 2, 26),ncol=2,byrow=TRUE)
+colnames(meningitis)<-c("Meningitis","Other")
+rownames(meningitis)<-c("Light","Dark")
+
+testtable <- as.table(meningitis)
+testtable
+
+chisq.test(testtable, correct=FALSE)
+```

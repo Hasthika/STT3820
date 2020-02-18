@@ -64,6 +64,9 @@ MathJax.Hub.Config({
 
 * [R codes for Ch 23: Two Dependent Means](../Lecture Notes/Ch23.html)
 
+## Week 5: (Mar 23--27) {-}
+
+* [R codes for Ch 24](../Lecture Notes/Ch24.html)
 
 ## Data for Future {-}
 
