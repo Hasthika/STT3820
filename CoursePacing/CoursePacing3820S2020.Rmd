@@ -59,6 +59,12 @@ MathJax.Hub.Config({
 * [R codes for Ch 22: Two Proportions](../Lecture Notes/Ch22.html)
 * [R codes for Ch 22: Two Means](../Lecture Notes/Ch22_2.html)
 
+
+## Week 5: (Mar 9--13) {-}
+
+* [R codes for Ch 23: Two Dependent Means](../Lecture Notes/Ch23.html)
+
+
 ## Data for Future {-}
 
 * [Atlanta Regression](../Lecture Notes/AtlantaRegression.csv)
