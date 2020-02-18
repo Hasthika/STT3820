@@ -107,9 +107,9 @@ list(Less=LTPval,Greater=GTPval,NotEqual=NEPval)
 
 # Sample size to estimate $\mu$ within a given ME
 
-You write!
 
-```{r include=FALSE}
+
+```{r}
 CIlev <- .95
 s <- 29.31
 ME <- 0.02

@@ -179,7 +179,7 @@ summary {
 
 <h1 class="title toc-ignore">R codes for Ch 20</h1>
 <h4 class="author">Dr. Hasthika Rupasinghe</h4>
-<h4 class="date">Feb 13, 2020 at 01:33:50 PM</h4>
+<h4 class="date">Feb 18, 2020 at 01:04:22 PM</h4>
 
 </div>
 
@@ -278,7 +278,23 @@ $NotEqual
 </div>
 <div id="sample-size-to-estimate-mu-within-a-given-me" class="section level1">
 <h1><span class="header-section-number">3</span> Sample size to estimate <span class="math inline">\(\mu\)</span> within a given ME</h1>
-<p>You write!</p>
+<pre class="r"><code>CIlev &lt;- .95
+s &lt;- 29.31
+ME &lt;- 0.02
+
+alpha &lt;- 1-CIlev
+alphaovertwo &lt;- alpha/2
+oneminusalphaovertwo &lt;- 1- alpha/2
+zinCI &lt;- qnorm(oneminusalphaovertwo)
+
+nprelim &lt;- (zinCI * s/ME)^2
+df &lt;- nprelim-1
+
+tstar &lt;- qt(oneminusalphaovertwo,df)
+
+nfinal &lt;- (tstar * s/ME)^2
+ceiling(nfinal)</code></pre>
+<pre><code>[1] 8250267</code></pre>
 </div>
 <div id="graphs-to-check-if-a-given-data-set-is-nearly-normal" class="section level1">
 <h1><span class="header-section-number">4</span> Graphs to check if a given data set is nearly normal</h1>
