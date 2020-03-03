@@ -30,15 +30,18 @@ If assumptions are met, $\hat{p_1} - \hat{p_2} \sim N(p_1-p_2, \sqrt{(p_1(1-p_1)
 # CI for $p_1-p_2$
 
 ```{r}
-phat1 <- 46/143 # or percent if given
-n1 <-143
+phat1 <- 46/103 # or percent if given
+n1 <-103
 
-phat2 <- 30/151 # or percent if given
-n2<-151
+phat2 <- 64/111 # or percent if given
+n2<-111
+
+phat1 - phat2
 
 SEphat1Minusphat2 <- sqrt(phat1*(1-phat1)/n1 + phat2*(1-phat2)/n2)
   
 SE <- SEphat1Minusphat2 #for ease of typing
+SE
 
 ConfLev <- .98
 
@@ -58,17 +61,18 @@ cat("The ",ConfLev*100,"% confidence interval is (",Low,",",UP,").")
 # HT for $p_1-p_2$
 
 ```{r}
-Successes1 <- 46
-n1 <- 143
+Successes1 <- 0.3*60
+n1 <- 60
 
 phat1 <- Successes1/n1
 
-Successes2 <- 30
-n2 <- 151
+Successes2 <- .25*40
+n2 <- 40
 
 phat2 <- Successes2/n2
 
 phatpool <- (Successes1 + Successes2)/(n1+n2)
+phatpool
 
 SD <- sqrt(phatpool*(1-phatpool)/n1 + phatpool*(1-phatpool)/n2)
 

@@ -21,9 +21,11 @@ library(tidyverse)
 # CI for single mean $\mu$
 
 ```{r}
-ybar <- 12.5
-s <- 2
-n <- 25
+times <- c(10.2,6,12.2,6,6,13.5,9.5,11.2,9.1,14.7)
+
+ybar <- mean(times)#12.5
+s <- sd(times)#2
+n <- length(times)#25
 CIlev <- .95
 
 
@@ -68,7 +70,7 @@ mu0 <- 10 #This is the value in H0 : mu = mu0
 #### Step 2:  Calcualte the standardized test statistic {-}
 ```{r}
 # Step 2:  Calcualte the standardized test statistic
-tstat <- (ybar - mu0)/(s/sqrt(n))
+tstat <- 1.76 #(ybar - mu0)/(s/sqrt(n))
 
 cat("The t-stat is",tstat)
 ```
@@ -78,7 +80,7 @@ cat("The t-stat is",tstat)
 ```{r}
 #P-value = P(get what you got or more when Ho is true)
 
-df <- n - 1 # degrees of freedom
+df <- 24 #n - 1 # degrees of freedom
 
 #less
 LTPval<- pt(tstat,df)

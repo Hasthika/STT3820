@@ -179,7 +179,7 @@ summary {
 
 <h1 class="title toc-ignore">R codes for Ch 22: Two Means</h1>
 <h4 class="author">Dr. Hasthika Rupasinghe</h4>
-<h4 class="date">Feb 13, 2020 at 03:18:53 PM</h4>
+<h4 class="date">Mar 03, 2020 at 11:36:56 AM</h4>
 
 </div>
 
@@ -206,13 +206,13 @@ summary {
 </div>
 <div id="ci-for-mu_1-mu_2" class="section level1">
 <h1><span class="header-section-number">2</span> CI for <span class="math inline">\(\mu_1-\mu_2\)</span></h1>
-<pre class="r"><code>ybar1 &lt;- 80
-s1 &lt;- 5
-n1 &lt;- 26
+<pre class="r"><code>ybar1 &lt;- 12.4
+s1 &lt;- 3.9
+n1 &lt;- 14
 
-ybar2 &lt;- 74
-s2 &lt;- 6
-n2 &lt;- 32
+ybar2 &lt;- 13.6
+s2 &lt;- 5.2
+n2 &lt;- 17
 
 df &lt;- (s1^2/n1 +s2^2/n2)^2/(1/(n1-1)*(s1^2/n1)^2 + 1/(n2-1)*(s2^2/n2)^2)
 
@@ -224,33 +224,33 @@ oneminusalphaovertwo &lt;- 1- alpha/2
 tstar &lt;- qt(oneminusalphaovertwo,df)
 
 tstar  #tstar in a CI formula</code></pre>
-<pre><code>[1] 2.003278</code></pre>
+<pre><code>[1] 2.045877</code></pre>
 <pre class="r"><code>LowP &lt;- ybar1-ybar2 - tstar * sqrt(s1^2/n1 +s2^2/n2)
 UpP &lt;- ybar1-ybar2 + tstar * sqrt(s1^2/n1 +s2^2/n2)
 
 CI &lt;- c(LowP,UpP)
 
 cat(&quot;The &quot;, CIlev*100, &quot; % confidence interval for mu is&quot;, CI)</code></pre>
-<pre><code>The  95  % confidence interval for mu is 3.106294 8.893706</code></pre>
+<pre><code>The  95  % confidence interval for mu is -4.54738 2.14738</code></pre>
 </div>
 <div id="ht-for-mu_1-mu_2" class="section level1">
 <h1><span class="header-section-number">3</span> HT for <span class="math inline">\(\mu_1-\mu_2\)</span></h1>
-<pre class="r"><code>ybar1 &lt;-80
-s1 &lt;- 5
-n1&lt;-26
+<pre class="r"><code>ybar1 &lt;- 12.4
+s1 &lt;- 3.9
+n1 &lt;- 14
 
-ybar2 &lt;-74
-s2 &lt;- 6
-n2 &lt;- 32
+ybar2 &lt;- 13.6
+s2 &lt;- 5.2
+n2 &lt;- 17
 
 df &lt;- (s1^2/n1 +s2^2/n2)^2/(1/(n1-1)*(s1^2/n1)^2 + 1/(n2-1)*(s2^2/n2)^2)
 
 cat(&quot;Degees of freedom is&quot;, df, &quot;\n&quot;)</code></pre>
-<pre><code>Degees of freedom is 55.95305 </code></pre>
+<pre><code>Degees of freedom is 28.79033 </code></pre>
 <pre class="r"><code>tstat &lt;- (ybar1-ybar2)/sqrt(s1^2/n1 +s2^2/n2)
 
 cat(&quot;The t-stat is&quot;, tstat, &quot;\n&quot;)</code></pre>
-<pre><code>The t-stat is 4.153728 </code></pre>
+<pre><code>The t-stat is -0.733425 </code></pre>
 <pre class="r"><code>#less
 LTPval&lt;- pt(tstat, df)
 
@@ -258,18 +258,18 @@ LTPval&lt;- pt(tstat, df)
 GTPval&lt;- 1-pt(tstat, df)
 
 #not equal
-NEPval&lt;-2*pnorm(-abs(tstat))
+NEPval&lt;-2*pt(-abs(tstat), df)
 
 
 list(LessPval=LTPval,GreaterPval=GTPval,NotEqualPval=NEPval)</code></pre>
 <pre><code>$LessPval
-[1] 0.9999436
+[1] 0.2346149
 
 $GreaterPval
-[1] 5.644751e-05
+[1] 0.7653851
 
 $NotEqualPval
-[1] 3.27102e-05</code></pre>
+[1] 0.4692298</code></pre>
 </div>
 
 

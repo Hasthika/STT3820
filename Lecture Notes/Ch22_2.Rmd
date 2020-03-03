@@ -29,13 +29,13 @@ If assumptions are met, $\bar{x_1} - \bar{x_2} \sim N(\mu_1-\mu_2, \sqrt{(s_1^2/
 # CI for $\mu_1-\mu_2$
 
 ```{r}
-ybar1 <- 80
-s1 <- 5
-n1 <- 26
+ybar1 <- 12.4
+s1 <- 3.9
+n1 <- 14
 
-ybar2 <- 74
-s2 <- 6
-n2 <- 32
+ybar2 <- 13.6
+s2 <- 5.2
+n2 <- 17
 
 df <- (s1^2/n1 +s2^2/n2)^2/(1/(n1-1)*(s1^2/n1)^2 + 1/(n2-1)*(s2^2/n2)^2)
 
@@ -60,13 +60,13 @@ cat("The ", CIlev*100, " % confidence interval for mu is", CI)
 # HT for $\mu_1-\mu_2$
 
 ```{r}
-ybar1 <-80
-s1 <- 5
-n1<-26
+ybar1 <- 12.4
+s1 <- 3.9
+n1 <- 14
 
-ybar2 <-74
-s2 <- 6
-n2 <- 32
+ybar2 <- 13.6
+s2 <- 5.2
+n2 <- 17
 
 df <- (s1^2/n1 +s2^2/n2)^2/(1/(n1-1)*(s1^2/n1)^2 + 1/(n2-1)*(s2^2/n2)^2)
 
@@ -83,7 +83,7 @@ LTPval<- pt(tstat, df)
 GTPval<- 1-pt(tstat, df)
 
 #not equal
-NEPval<-2*pnorm(-abs(tstat))
+NEPval<-2*pt(-abs(tstat), df)
 
 
 list(LessPval=LTPval,GreaterPval=GTPval,NotEqualPval=NEPval)
