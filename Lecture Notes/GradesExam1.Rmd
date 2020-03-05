@@ -19,7 +19,7 @@ library(ggplot2)
 ```{r echo=FALSE}
 library(plotly)
 library(ggplot2)
-Class2 <- c(78,	72,	93,	96,	90,	47,	100,	78,	97,	32,	89,	86,	93,	85,	59,	100,	60,	85,	100,	82,	83,	96,	55,	74,	91,	91,	96,	63,	84,	74,	89)
+Class2 <- c(78,	72,	96,	99,	93,	50,	100,	81,	100,	32,	92,	86,	96,	85,	59,	100,	63,	85,	100,	82,	83,	96,	55,	77,	91,	94,	96,	66,	87,	74,	92)
 
 
 p2 <- ggplot(data = data.frame(Class2), aes(x = Class2)) + 
@@ -27,7 +27,7 @@ p2 <- ggplot(data = data.frame(Class2), aes(x = Class2)) +
   theme_bw() + 
   labs(x = "Exam 1 grades") +
   geom_vline(xintercept=median(Class2), linetype="dotted") +
-  annotate("text",x=median(Class2)+1,y=0.01,label="Exam Average = 85",hjust=0)
+  annotate("text",x=median(Class2)+1,y=0.01,label="Exam Average = 86",hjust=0)
 
 ggplotly(p2)
 
