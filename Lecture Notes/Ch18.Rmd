@@ -22,9 +22,9 @@ library(tidyverse)
 # Confidance Intervals For proportion #
 #######################################
 
-x <- 81 # successes
-n <- 567 # trials
-CIlev <- 0.95 # Level as a decimal
+x <- 66 # successes
+n <- 97 # trials
+CIlev <- 0.90 # Level as a decimal
 
 phat <- x/n
 
@@ -81,9 +81,9 @@ zstar
 #############################
 
 
-phatstar <- 0.5  # use .5 if not given in the problem
-ME <- .2 # Margin of error 
-CIlev <- .95 # CI level
+phatstar <-  0.5 # use .5 if not given in the problem
+ME <-  0.09 # Margin of error 
+CIlev <- .99 # CI level
 
 alpha <- 1-CIlev
 alphaovertwo <- alpha/2

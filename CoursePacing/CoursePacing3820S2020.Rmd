@@ -46,25 +46,27 @@ MathJax.Hub.Config({
 
 * [R codes for Ch 19](../Lecture Notes/Ch19.html)
 
-## Week 5: (Feb 17--21) {-}
+## Week 6: (Feb 17--21) {-}
 
 * [R codes for Ch 20](../Lecture Notes/Ch20.html)
 
-## Week 5: (Feb 24--28) {-}
+## Week 7: (Feb 24--28) {-}
 
 * No new R scripts are needed (for ch 21 use the previous scripts)
 
-## Week 5: (Mar 2--6) {-}
+## Week 8: (Mar 2--6) {-}
 
 * [R codes for Ch 22: Two Proportions](../Lecture Notes/Ch22.html)
 * [R codes for Ch 22: Two Means](../Lecture Notes/Ch22_2.html)
 
 
-## Week 5: (Mar 9--13) {-}
+## Week 9: (Mar 9--13) {-}
+
+* [Exam 1 Grade Distribution](../Lecture Notes/GradesExam1.html)
 
 * [R codes for Ch 23: Two Dependent Means](../Lecture Notes/Ch23.html)
 
-## Week 5: (Mar 23--27) {-}
+## Week 10: (Mar 23--27) {-}
 
 * [R codes for Ch 24](../Lecture Notes/Ch24.html)
 

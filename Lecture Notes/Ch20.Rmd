@@ -26,17 +26,18 @@ times <- c(10.2,6,12.2,6,6,13.5,9.5,11.2,9.1,14.7)
 ybar <- mean(times)#12.5
 s <- sd(times)#2
 n <- length(times)#25
-CIlev <- .95
+
+CIlev <- .99
 
 
-df <- n-1
+df <- 24 #n-1
 
 alpha <- 1-CIlev
 alphaovertwo <- alpha/2
 oneminusalphaovertwo <- 1- alpha/2
 tstar <- qt(oneminusalphaovertwo,df)
 
-tstar #t in a CI formula
+tstar #t in a CI formula (Critical value)
 
 LowMu <- ybar - tstar * s/sqrt(n)
 UpMu <- ybar + tstar * s/sqrt(n)

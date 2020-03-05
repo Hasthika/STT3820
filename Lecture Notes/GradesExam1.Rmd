@@ -1,0 +1,41 @@
+---
+title: "Exam 1 grades"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    highlight: textmate
+    theme: yeti
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+library(ggplot2)
+```
+
+# STT 3820 Exam 1 grades Spring 2020.{-}
+
+```{r echo=FALSE}
+library(plotly)
+library(ggplot2)
+Class2 <- c(78,	72,	93,	96,	90,	47,	100,	78,	97,	32,	89,	86,	93,	85,	59,	100,	60,	85,	100,	82,	83,	96,	55,	74,	91,	91,	96,	63,	84,	74,	89)
+
+
+p2 <- ggplot(data = data.frame(Class2), aes(x = Class2)) + 
+  geom_density(fill = "gold2") + 
+  theme_bw() + 
+  labs(x = "Exam 1 grades") +
+  geom_vline(xintercept=median(Class2), linetype="dotted") +
+  annotate("text",x=median(Class2)+1,y=0.01,label="Exam Average = 85",hjust=0)
+
+ggplotly(p2)
+
+
+```
+
+
+
+
+
+

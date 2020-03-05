@@ -56,8 +56,8 @@ hist(phat)
 
 ```{r}
 
-p <- .07 # Population Propotion of interest
-n <- 233 # Sample size 
+p <- 0.15# Population Propotion of interest
+n <- 200 # Sample size 
 
 #Check assumptions!!!
 n*p > 10
@@ -85,7 +85,7 @@ pnorm(.06,meanphat,sdphat)
 #greater than for a normal
 #1-pnorm(value,mean,sd)
 
-1-pnorm(.09,meanphat,sdphat)
+1-pnorm(0.12,meanphat,sdphat)
 
 #between for a normal
 #pnorm(bigvalue,mean,sd)-pnorm(smallerval,mean,sd)
