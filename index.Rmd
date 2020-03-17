@@ -2,6 +2,13 @@
 title: "Welcome"
 ---
 
+***
+
+## **Class Meetings**
+
+* [Click here to go to class](https://appstate.zoom.us/j/942481790)
+
+***
 
 * [Class RStudio Server](https://mathr.math.appstate.edu) (you must be registered in the course to access the server)
 
