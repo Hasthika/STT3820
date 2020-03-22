@@ -47,7 +47,7 @@ Up <- dbar + tstar * sOfd/sqrt(nd)
 
 CI <- c(Low,Up)
 
-cat("The ", CIlev*100, " % confidence interval for mu is", CI)
+cat("The ", CIlev*100, " % confidence interval for (mu_pre - mu_post) is", CI)
   
 ```
 
