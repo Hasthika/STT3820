@@ -72,6 +72,8 @@ qqnorm(model$residuals) # QQplot- To check if residuals are normal
 
 ```
 
+ <a href="#top">Back to top</a>
+ 
 # More about the model
 
 ```{r}
@@ -111,21 +113,27 @@ output
 #--------------End Table---------------------------
 ```
 
+ <a href="#top">Back to top</a>
+
 # Write out the model equation 
 
 ```{r}
 summary(model) # Use this to get the coefficients
 ```
 
+
 $$\hat{y} = 177.21452 + 0.07862 \times x$$
 $$\hat{Fare} = 177.21452 + 0.07862 \times Distance$$
-
+ <a href="#top">Back to top</a>
+ 
 # Hypothesis test for $\beta$'s
 
 ```{r}
 model <- lm(y ~ x)
 summary(model)
 ```
+
+ <a href="#top">Back to top</a>
 
 # CI for $\beta$'s
 
@@ -134,6 +142,8 @@ model <- lm(y ~ x)
 
 confint(model, level=.95) # 95% CI for betas
 ```
+
+ <a href="#top">Back to top</a>
 
 # PI for a new observation
 
@@ -146,6 +156,7 @@ predict(model, data.frame(x=700),interval="pred",level=.95) #prediction interval
 
 ```
 
+ <a href="#top">Back to top</a>
 
 # CI for the mean value for a new observation
 
@@ -156,4 +167,5 @@ model <- lm(y ~ x)
 predict(model, data.frame(x=700),interval="conf",level=.95) #confidence interval
 ```
 
+ <a href="#top">Back to top</a>
 
