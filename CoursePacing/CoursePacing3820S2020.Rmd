@@ -70,7 +70,10 @@ MathJax.Hub.Config({
 
 * [R codes for Ch 24](../Lecture Notes/Ch24.html)
 
-## Data for Future {-}
+## Week 11: (Mar 30-- Apr 4) {-}
 
-* [Atlanta Regression](../Lecture Notes/AtlantaRegression.csv)
+* [R codes for Ch 25](../Lecture Notes/Ch25.html)
+* Data for Ch 25: [Atlanta Regression](../Lecture Notes/AtlantaRegression.csv)
+
+
 
