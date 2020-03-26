@@ -39,10 +39,12 @@ plot(x,fx,type="l") #type = lines
 
 # Example in the notes-  grades = "A", "B", "C", "D", "F"
 
-obs <- c(89, 121, 78, 25, 12)
-exppercent <- c(0.15, 0.3, 0.4, 0.1, 0.05)
+obs <- c(25, 36, 32, 27)
+exppercent <- c(.25,.25,.25,.25)
 
-chisq.test(obs,p=exppercent)
+results <- chisq.test(obs,p=exppercent)
+results
+
 ```
 
 # Test 2: Homogeneity
@@ -82,3 +84,32 @@ testtable
 
 chisq.test(testtable, correct=FALSE)
 ```
+
+
+# Critical values for $\chi^2$ distribution
+
+  * If the test statistic (a $\chi^2$  test statistic in this case) falls to the right of the critical value we reject $H_o$
+  * If the test statistic falls to the left of the critical value we fail to reject $H_o$
+
+```{r}
+
+
+alpha <- 0.01
+df <- 3
+critical_val <- qchisq(1-alpha, df)
+critical_val
+
+
+# Optional code to make a graph to visualize the rejection region (this graphic is not dynamic, only woks with the ex above)
+ggplot(data.frame(x = c(0, 20)), aes(x = x, fill = x > critical_val)) +
+     stat_function(fun = dchisq, args = list(df = 3)) +
+  labs(xlab = " ", ylab = " ") +
+  geom_vline(xintercept = critical_val)+
+  annotate(geom="text", x=15, y=0.00, label="Rejection Region", color="red") +
+  annotate(geom="text", x=5, y=0.00, label="Do not Reject Region", color="green") +
+  annotate(geom="text", x=11, y=0.05, label="Critical Value", color="steelblue", angle = 90) +
+  annotate(geom="text", x=16, y=0.02, label=" area = alpha", color="orchid4") +
+  annotate(geom="text", x=4.5, y=0.04, label=" area = 1 - alpha", color="orchid4") +
+  theme_bw()
+```
+
