@@ -66,11 +66,13 @@ MathJax.Hub.Config({
 
 * [R codes for Ch 23: Two Dependent Means](../Lecture Notes/Ch23.html)
 
-* [Lecture Video for Ch 23](https://appstate.zoom.us/rec/share/-u5RcYOo9GdIH7fd8BDhWKoPM97saaa8gCgXrKJcn0v7yo6BGPkPIMvFJ3yvR_2u)
+* [**Lecture Video for Ch 23**](https://appstate.zoom.us/rec/share/-u5RcYOo9GdIH7fd8BDhWKoPM97saaa8gCgXrKJcn0v7yo6BGPkPIMvFJ3yvR_2u)
 
 ## Week 10: (Mar 23--27) {-}
 
 * [R codes for Ch 24](../Lecture Notes/Ch24.html)
+
+* [**Lecture Video for Ch 24**](https://appstate.zoom.us/rec/share/5c0sIu7a2DpIaaPyym2HULY4NIXOeaa81CAfqPYPy08UanoEfAfTLa03ToZhjM_6)
 
 ## Week 11: (Mar 30-- Apr 4) {-}
 
