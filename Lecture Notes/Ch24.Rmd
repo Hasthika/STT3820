@@ -39,8 +39,8 @@ plot(x,fx,type="l") #type = lines
 
 # Example in the notes-  grades = "A", "B", "C", "D", "F"
 
-obs <- c(25, 36, 32, 27)
-exppercent <- c(.25,.25,.25,.25)
+obs <- c(89, 121, 78, 25, 12)
+exppercent <- c(0.15, 0.3, 0.4, 0.1, 0.05)
 
 results <- chisq.test(obs,p=exppercent)
 results
@@ -86,7 +86,7 @@ chisq.test(testtable, correct=FALSE)
 ```
 
 
-# Critical values for $\chi^2$ distribution
+# Critical values for $\chi^2$ distribution 
 
   * If the test statistic (a $\chi^2$  test statistic in this case) falls to the right of the critical value we reject $H_o$
   * If the test statistic falls to the left of the critical value we fail to reject $H_o$
