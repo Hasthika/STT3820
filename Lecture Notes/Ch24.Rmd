@@ -37,7 +37,8 @@ plot(x,fx,type="l") #type = lines
 ################################################################
 
 
-grades <- c("A", "B", "C", "D", "F")
+# Example in the notes-  grades = "A", "B", "C", "D", "F"
+
 obs <- c(89, 121, 78, 25, 12)
 exppercent <- c(0.15, 0.3, 0.4, 0.1, 0.05)
 
