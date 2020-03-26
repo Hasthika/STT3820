@@ -63,7 +63,9 @@ rownames(shows)<-c("Boys", "Girls")
 testtable <- as.table(shows)
 testtable
 
-chisq.test(testtable)
+results <- chisq.test(testtable)
+results
+
 ```
 
 # Test 3: Independence
@@ -82,7 +84,8 @@ rownames(meningitis)<-c("Light","Dark")
 testtable <- as.table(meningitis)
 testtable
 
-chisq.test(testtable, correct=FALSE)
+results <- chisq.test(testtable, correct=FALSE)
+results
 ```
 
 

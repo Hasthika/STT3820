@@ -179,7 +179,7 @@ summary {
 
 <h1 class="title toc-ignore">R codes for Ch 24</h1>
 <h4 class="author">Dr. Hasthika Rupasinghe</h4>
-<h4 class="date">Mar 25, 2020 at 10:03:03 PM</h4>
+<h4 class="date">Mar 25, 2020 at 10:28:41 PM</h4>
 
 </div>
 
@@ -240,7 +240,8 @@ testtable</code></pre>
 <pre><code>      Lone Ranger Sesame St The Simpsons
 Boys           50        30           20
 Girls          50        80           70</code></pre>
-<pre class="r"><code>chisq.test(testtable)</code></pre>
+<pre class="r"><code>results &lt;- chisq.test(testtable)
+results</code></pre>
 <pre><code>
     Pearson's Chi-squared test
 
@@ -264,7 +265,8 @@ testtable</code></pre>
 <pre><code>      Meningitis Other
 Light         30    72
 Dark           2    26</code></pre>
-<pre class="r"><code>chisq.test(testtable, correct=FALSE)</code></pre>
+<pre class="r"><code>results &lt;- chisq.test(testtable, correct=FALSE)
+results</code></pre>
 <pre><code>
     Pearson's Chi-squared test
 
