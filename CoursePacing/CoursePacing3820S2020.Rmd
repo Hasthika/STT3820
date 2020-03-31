@@ -72,9 +72,11 @@ MathJax.Hub.Config({
 
 * [R codes for Ch 24](../Lecture Notes/Ch24.html)
 
-* [**Lecture Video for Ch 24**](https://appstate.zoom.us/rec/share/5c0sIu7a2DpIaaPyym2HULY4NIXOeaa81CAfqPYPy08UanoEfAfTLa03ToZhjM_6)
+* [**Lecture Video for Ch 24 Part 1**](https://appstate.zoom.us/rec/share/5c0sIu7a2DpIaaPyym2HULY4NIXOeaa81CAfqPYPy08UanoEfAfTLa03ToZhjM_6)
 
 ## Week 11: (Mar 30-- Apr 4) {-}
+
+* [**Lecture Video for Ch 24 Part 2**](https://appstate.zoom.us/rec/share/4JB6I7C38TxLAZ3guX3OB_8OH5zoT6a8gXMe_PZfyBps1H_G_gzW2VU0FVQ9eHxW)
 
 * [R codes for Ch 25: With raw data](../Lecture Notes/Ch25.html)
 * [R codes for Ch 25: With summary stats](../Lecture Notes/Ch25_2.html)
