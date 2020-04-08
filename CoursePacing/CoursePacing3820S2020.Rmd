@@ -82,6 +82,7 @@ MathJax.Hub.Config({
 
 * [**Lecture Video for Ch 25 Part 1**](https://appstate.zoom.us/rec/share/pvZSAZCr2kZIfLf82R2PR5d5MNu7T6a80SFL_vYKn0a6HQy4WXc95v9H_wLXghT0)
 
+* [**Lecture Video for Ch 25 Part 2**](https://appstate.zoom.us/rec/share/-PAoD5j6rHNOUpHsq3-ESvNxOISiX6a80ChL-_dbzUwBbzOw4Sq-oqlgGvBINE-U)
 
 * [R codes for Ch 25: With summary stats](../Lecture Notes/Ch25_2.html)
 
