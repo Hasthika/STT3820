@@ -6,7 +6,7 @@ Baseball NonAthlete Football
 24 30 19
 25 27 23
 24 26 17
-23 23
+23 23 NA
 
 
 
