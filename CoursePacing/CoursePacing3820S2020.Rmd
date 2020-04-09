@@ -93,4 +93,5 @@ MathJax.Hub.Config({
 
 ## Week 12: (Apr 7-- Apr 11) {-}
 
+* [R codes for Ch 26](../Lecture Notes/Ch26.html)
 * [Data for Ch 26](../Lecture Notes/ScoreACT.txt)
