@@ -1,0 +1,112 @@
+---
+title: "R codes for Ch 25 (with summary stats)"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    toc: true
+    highlight: textmate
+    theme: yeti
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
+library(tidyverse)
+```
+
+> **_NOTE:_**  Use this script for Ch25 ONLY if the question summary stats
+
+
+ 
+# Hypothesis test for $\beta$'s
+
+```{r}
+#Slope
+b1<- 2.23639
+SEb1<-0.5385
+tstat <- b1/SEb1
+tstat
+
+dfHT <- 11
+
+#p-value < is pt, > is 1-pt, not equal is 2*tail
+less <- pt(tstat,dfHT)
+more <- 1-pt(tstat,dfHT)
+twoTail <- 2*min(less, more)
+
+```
+
+ <a href="#top">Back to top</a>
+
+# CI for $\beta$'s
+
+```{r}
+bj<- 0.662618
+SEbj <- 0.2747
+
+CIdf<-18
+CIlev<-.95
+
+alpha<-1-CIlev
+tCI <- qt(1-alpha/2,CIdf)
+
+Low<- bj -tCI*SEbj
+Up<- bj+ tCI*SEbj
+
+cat("The ",CIlev*100,"% CI is (",Low,", ",Up,").")
+```
+
+ <a href="#top">Back to top</a>
+
+
+# PI or CI for a new observation
+
+
+```{r}
+
+SEb1 <- .3052 # SE of b1
+xbar <- 38.3 # sample mean of the independet variable
+
+xnew <- 38 # The given new observation
+
+se <- 4.53
+n<-20
+df<- n-2
+
+b0<- -49.5277 # Intercept 
+b1<- 1.8715 # Slope
+
+yhatnew <- b0 + b1*xnew # Applying the regression equation (no changes needed)
+
+CIlev <-.95
+alpha <-1-CIlev
+
+tCI <- qt(1-alpha/2,df)
+
+
+# PI: Single new observation (Prediction Interval)
+
+SEyhatNEW <- sqrt(SEb1^2*(xnew-xbar)^2 + se^2/n +se^2)
+
+LowPI <- yhatnew - tCI*SEyhatNEW
+UpPI <- yhatnew + tCI*SEyhatNEW
+
+cat("The ",CIlev*100,"% prediction interval for x=",xnew," is ","(",LowPI,", ",UpPI,").")
+
+
+# CI: for the AVERAGE predictions
+
+SEmuNEW <- sqrt(SEb1^2*(xnew-xbar)^2 + se^2/n)
+
+LowCI <- yhatnew - tCI*SEmuNEW
+UpCI <- yhatnew + tCI*SEmuNEW
+
+cat("The ",CIlev*100,"% confidence interval for average at x=",xnew," is ","(",LowCI,", ",UpCI,").")
+
+```
+
+ <a href="#top">Back to top</a>
+
+
+
