@@ -24,6 +24,12 @@ ACT <- read.table("https://hasthika.github.io/STT3820/Lecture%20Notes/ScoreACT.t
 
 ACT
 
+act <- stack(ACT)
+act
+
+anovaACT<- aov(act$values~act$ind)
+outputanovaACT <- anova(anovaACT)
+outputanovaACT
 ```
 
  <a href="#top">Back to top</a>
