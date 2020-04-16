@@ -30,9 +30,85 @@ act
 anovaACT<- aov(act$values~act$ind)
 outputanovaACT <- anova(anovaACT)
 outputanovaACT
+
+
 ```
 
  <a href="#top">Back to top</a>
+
+
+# Assumptions check:
+
+## Independence - Check for randomization {-}
+
+## Equal variance among the treatments - Check using Side by side Boxplots {-}
+
+### Side by side Boxplots {-}
+
+```{r}
+boxplot(values~ind,  # Specify the variables to graph, quantitative variable first
+        data = act,                    # Specify the data set 
+        main = "ACT Scores and Groups",           # Create the chart title
+        xlab = "Groups (or Treatments)",  # Create the x-axis label
+        ylab = "ACT Scores")           # Create the y-axis label
+
+```
+
+## Normal Errors {-}
+
+### Residual plot (Check for outliers) {-}
+### Use a normal probability plot (qqplot) of the residuals or a histogram of the resduals {-}
+    
+```{r}
+plot(anovaACT) # Use only the first two plots (Residual plot and qqplot)
+```
+    
+
+
+
+
+`
+
+
+# Multiple comparisons (**After** you reject $H_0$)
+
+
+```{r}
+TukeyHSD(aov(act$values~act$ind), conf.level=.95)
+```
+
+
+# HW help
+
+```{r}
+
+# HW#2, #7
+
+library(readxl)
+data7 <- read_excel("~/git_repositories/STT3820/Lecture Notes/data7.xlsx")
+
+data7 #see original
+
+data7 <- stack(data7)
+data7 #see numerical column and names column
+
+anovadata <- aov(data7$values~data7$ind)
+anovadata
+summary(anovadata)
+```
+
+
+# P-value from a $F$ Distribution
+
+```{r}
+Fstat <- 10
+
+numDf <- 3
+denDf <- 2
+
+1-pf(Fstat, numDf, denDf)
+
+```
 
 
 
