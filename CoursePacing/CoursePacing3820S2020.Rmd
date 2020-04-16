@@ -97,3 +97,8 @@ MathJax.Hub.Config({
 
 * [R codes for Ch 26](../Lecture Notes/Ch26.html)
 * [Data for Ch 26](../Lecture Notes/ScoreACT.txt)
+
+* [**Lecture Video for Ch 26 Part 1**](https://appstate.zoom.us/rec/share/-Jx7MprR_EJOTquU10P-VbA_R8fraaa8hCQW8vcNnUhZ-aO4jrfHPnN75P_fsTka)
+
+* [**Lecture Video for Ch 26 Part 2**](https://appstate.zoom.us/rec/share/1OxcIvLtpzhOE43D62HwcPB7M77OT6a80SUcqPIMyUdv_zkS8ghLwwquu3rOWl-1)
+

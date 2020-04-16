@@ -101,10 +101,10 @@ summary(anovadata)
 # P-value from a $F$ Distribution
 
 ```{r}
-Fstat <- 10
+Fstat <- 13.55
 
-numDf <- 3
-denDf <- 2
+numDf <- 3 # Treatment df
+denDf <- 8 # Error (or residual) df
 
 1-pf(Fstat, numDf, denDf)
 
