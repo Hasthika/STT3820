@@ -102,3 +102,5 @@ MathJax.Hub.Config({
 
 * [**Lecture Video for Ch 26 Part 2**](https://appstate.zoom.us/rec/share/1OxcIvLtpzhOE43D62HwcPB7M77OT6a80SUcqPIMyUdv_zkS8ghLwwquu3rOWl-1)
 
+* [**Review for test 2 - video recording**](https://appstate.zoom.us/rec/share/y85KD7GvpkNJTp3qsWuCUbYdL7nfX6a82iQZ8_VbyEwbTEfv_wGPTdmQurq9bTCY)
+
