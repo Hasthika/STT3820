@@ -104,3 +104,7 @@ MathJax.Hub.Config({
 
 * [**Review for test 2 - video recording**](https://appstate.zoom.us/rec/share/y85KD7GvpkNJTp3qsWuCUbYdL7nfX6a82iQZ8_VbyEwbTEfv_wGPTdmQurq9bTCY)
 
+
+## Week 14: (Apr 27-- Apr 28) {-}
+
+* [**Review for Final - video recording**](https://appstate.zoom.us/rec/share/1MUoNor0qGlJfZGTxmXEea8NDrT1eaa8hHVLqPpYnR7tV86QgKABDWptTRPkjftk)
