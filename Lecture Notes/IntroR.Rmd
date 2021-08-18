@@ -11,7 +11,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
-library(tidyverse)
+#library(tidyverse)
 ```
 
 # Intro R commands {-}

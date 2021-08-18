@@ -11,10 +11,12 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
-library(tidyverse)
+#library(tidyverse)
 ```
+***
+Write an R script that would do what 1–8 describe. E-mail your script to `hasthika@appstate.edu` before 11.59 p.m. on Sunday, August 29th. Your file should be named `FirstLastRIntroHW.R`.
 
-Write an R script that would do what 1–8 describe. E-mail your script to `hasthika@appstate.edu` before 4 p.m. on Tuesday, January 28th. Your file should be named `FirstLastRIntroHW.R`.
+***
 
 1. Create variables `X` and `Y` with the values 8 and 16 stored in them, respectively. (5 pts.)
 
@@ -45,6 +47,8 @@ B. Comments present to indicate question being answered (5 pts.)
 C. Good variables (5 pts.)
 
 D. Clear formatting (5 pts.)
+
+E. Correct work (80 pts.)
 
 **Total = 100 points**
 

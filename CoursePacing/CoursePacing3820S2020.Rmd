@@ -25,13 +25,14 @@ MathJax.Hub.Config({
 * No R scripts are needed
 
 ***
-<!--
-## Week 2: (Jan 20--24) {-}
+
+## Week 2: (Aug 23--27) {-}
 
 * [Intro R codes](../Lecture Notes/IntroR.html)
 * [Intro R Homework](../Lecture Notes/IntroRHW.html)
 
-
+***
+<!--
 ## Week 3 (Jan 27--Jan 31) {-}
 
 * [R codes for Ch 17 Proportions](../Lecture Notes/Ch17_proportions.html)
