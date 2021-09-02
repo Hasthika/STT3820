@@ -4,6 +4,8 @@ author: "Dr. Hasthika Rupasinghe"
 date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
 output:
   bookdown::html_document2:
+    toc: true
+    toc_depth: 2
     highlight: textmate
     theme: yeti
 ---
@@ -14,8 +16,11 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align =
 #library(tidyverse)
 ```
 
-# This R script contains two main topics:{-}
 
+
+
+
+***
 # Simulation of proportion with graphs
 
 We use this section of the RScript to understand the concept of Sampling Distribution (of the Proportion). Do not use this part to solve problems.
@@ -106,7 +111,41 @@ qnorm(.9,meanphat,sdphat)
 
 ```
 
+***
+
+# Confidence Intervals For proportion 
+
+```{r}
+#######################################
+# Confidence Intervals For proportion #
+#######################################
+
+x <- 66 # successes
+n <- 97 # trials
+phat <- x/n
+
+CIlev <- 0.90 # CI Level as a decimal
+alpha <- 1-CIlev
+alphaovertwo <- alpha/2
+oneminusalphaovertwo <- 1- alpha/2
+zstar <- qnorm(oneminusalphaovertwo) 
+
+cat("Your Critical value (z*) is =", zstar, "\n")
 
 
+#ME <- zstar * sqrt(phat* (1-phat)/n) # If you are only looking for the ME, remove the pound signs and run these two lines
+#ME
 
+LowP <- phat - zstar * sqrt(phat* (1-phat)/n) # Lower limit of the CI
+UpP <- phat + zstar * sqrt(phat *(1-phat)/n) # Upper limit of the CI
+
+CI <- c(LowP,UpP)
+
+cat("The asymptotic", CIlev*100, " % confidence interval for p is", CI) 
+```
+
+#  Solve for sample size
+
+
+You write it!
 
