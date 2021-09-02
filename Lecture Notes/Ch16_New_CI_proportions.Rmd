@@ -60,6 +60,8 @@ sd(phat)   # Spread
 # End of simulation
 ```
 
+<a href="#top">Back to top</a>
+
 ***
 
 # Using the theoretical distribution to solve problems
@@ -84,6 +86,8 @@ meanphat
 sdphat
 
 ```
+
+<a href="#top">Back to top</a>
 
 ## Answring probability problems
 
@@ -111,7 +115,10 @@ qnorm(.9,meanphat,sdphat)
 
 ```
 
+<a href="#top">Back to top</a>
+
 ***
+
 
 # Confidence Intervals For proportion 
 
@@ -143,6 +150,10 @@ CI <- c(LowP,UpP)
 
 cat("The asymptotic", CIlev*100, " % confidence interval for p is", CI) 
 ```
+
+<a href="#top">Back to top</a>
+ 
+***
 
 #  Solve for sample size
 
