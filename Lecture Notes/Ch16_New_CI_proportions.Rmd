@@ -139,6 +139,8 @@ zstar <- qnorm(oneminusalphaovertwo)
 
 cat("Your Critical value (z*) is =", zstar, "\n")
 
+#SE <- sqrt(phat* (1-phat)/n) # If you are only looking for the SE, remove the pound signs and run these two lines
+#SE
 
 #ME <- zstar * sqrt(phat* (1-phat)/n) # If you are only looking for the ME, remove the pound signs and run these two lines
 #ME
@@ -157,6 +159,26 @@ cat("The asymptotic", CIlev*100, " % confidence interval for p is", CI)
 
 #  Solve for sample size
 
+```{r}
 
-You write it!
+#############################
+#  Solve for sample size:   #
+#############################
+
+
+phatstar <-  0.5 # use .5 if not given in the problem
+ME <-  0.09 # Margin of error 
+CIlev <- .99 # CI level
+
+alpha <- 1-CIlev
+alphaovertwo <- alpha/2
+oneminusalphaovertwo <- 1- alpha/2
+zstar <- qnorm(oneminusalphaovertwo)
+
+n <- (zstar/ME)^2*phatstar*(1-phatstar)
+
+
+cat("The required sample size is ",ceiling(n))  #ceiling function always goes up to the next integer
+```
+
 
