@@ -1,0 +1,150 @@
+---
+title: "R codes for Ch 17: Confidence Intervals for Means"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    toc: true
+    toc_depth: 2
+    highlight: textmate
+    theme: yeti
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
+#library(tidyverse)
+```
+
+
+
+# Simulation of mean with graphs
+
+```{r}
+
+mu <- 10 # Population mean
+sigma <- 5 # Population s.d.
+n <- 30 # Sample size
+
+
+# Generate a sample
+sample <-  rnorm(n, mu, sigma) # This will create a sample from the normal distribution
+#sample <- rexp(n, rate = 1/2) # This will create a sample from the exponetial distribution
+
+# Looking at the sample (optional)
+sample 
+
+# Find the of the sample (xbar for the sample)
+mean(sample)
+
+# How does the samaple looks like?
+hist(sample)
+
+
+# Now repeat the above process 1000 times and find the average of means
+
+xbar <- numeric(1000)
+
+for (i in 1:1000){
+  
+  sample <- rnorm(n, mu, sigma)
+  #sample <- rexp(n, rate = 1/2)
+  xbar[i] <- mean(sample) 
+}
+
+# How does the samaple MEAN looks like?
+mean(xbar)
+sd(xbar)
+hist(xbar)
+
+# End of simulation
+```
+
+***
+
+# Using the theoretical distribution to solve problems
+
+```{r}
+
+mu <- 10.5 # Population mean of interest
+sigma <- 6.25 # Population sd of interest
+n <- 15 # Sample size 
+
+
+# Mean and the sd of the sampling distribution for xbar
+meanxbar <- mu
+sdxbar <- sigma/sqrt(n)
+
+meanxbar
+sdxbar
+
+```
+
+## Answring probability problems
+
+```{r}
+
+#less than for a normal
+#pnorm(value,mean,sd)
+
+pnorm(6, meanxbar, sdxbar)
+
+#greater than for a normal
+#1-pnorm(value,mean,sd)
+
+1-pnorm(12, meanxbar, sdxbar)
+
+#between for a normal
+#pnorm(bigvalue,mean,sd)-pnorm(smallerval,mean,sd)
+
+pnorm(58, meanxbar, sdxbar)-pnorm(58, meanxbar, sdxbar)
+
+# Given the probability find the quantile
+#qnorm(percentless,mean,sd)
+
+qnorm(.9, meanxbar, sdxbar)
+
+```
+
+
+# CI for (single) mean $\mu$
+
+## CI  
+
+```{r}
+lifeTime <- c(321, 295, 332, 351, 281, 336, 311, 253, 270, 326, 311, 288)
+
+ybar <- mean(lifeTime)
+s <- sd(lifeTime)
+n <- length(lifeTime)
+
+CIlev <- .99
+
+df <- n-1
+
+alpha <- 1-CIlev
+alphaovertwo <- alpha/2
+oneminusalphaovertwo <- 1- alpha/2
+tstar <- qt(oneminusalphaovertwo,df)
+
+cat("Your Critical value (t*) is =", tstar, "\n")  #t in a CI formula (Critical value)
+
+LowMu <- ybar - tstar * s/sqrt(n)
+UpMu <- ybar + tstar * s/sqrt(n)
+
+CI <- c(LowMu, UpMu)
+
+cat("The ", CIlev*100, " % confidence interval for mu is", CI)
+```
+
+
+## check if data is nearly normal
+
+```{r}
+lifeTime <- c(321, 295, 332, 351, 281, 336, 311, 253, 270, 326, 311, 288)
+
+hist(lifeTime) # Histogram to check normality
+
+qqnorm(lifeTime) #Normal probability plot (or qq plot) to check normality
+```
+

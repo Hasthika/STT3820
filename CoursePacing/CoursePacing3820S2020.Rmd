@@ -43,6 +43,7 @@ MathJax.Hub.Config({
 ## Week 4 (Sep 06--Sep 10) {-}
 
 * [Chapter 16 R codes](../Lecture Notes/Ch16_New_CI_proportions.html)
+* [Chapter 17 R codes](../Lecture Notes/Ch17_New_mean.html)
 
 ***
 
