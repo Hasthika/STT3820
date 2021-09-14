@@ -19,28 +19,27 @@ library(tidyverse)
 ```{r}
 
 #######################################
-# Confidance Intervals For proportion #
+# Confidence Intervals For proportion #
 #######################################
 
 x <- 66 # successes
 n <- 97 # trials
-CIlev <- 0.90 # Level as a decimal
-
 phat <- x/n
 
-#prop.test(x, n, conf.level=CIlev) #preferred CI with correction...use professionally
-
+CIlev <- 0.90 # CI Level as a decimal
 alpha <- 1-CIlev
 alphaovertwo <- alpha/2
 oneminusalphaovertwo <- 1- alpha/2
-
 zstar <- qnorm(oneminusalphaovertwo) 
+
+cat("Your Critical value (z*) is =", zstar, "\n")
+
 
 #ME <- zstar * sqrt(phat* (1-phat)/n) # If you are only looking for the ME, remove the pound signs and run these two lines
 #ME
 
-LowP <- phat - zstar * sqrt(phat* (1-phat)/n)
-UpP <- phat + zstar * sqrt(phat *(1-phat)/n)
+LowP <- phat - zstar * sqrt(phat* (1-phat)/n) # Lower limit of the CI
+UpP <- phat + zstar * sqrt(phat *(1-phat)/n) # Upper limit of the CI
 
 CI <- c(LowP,UpP)
 
@@ -71,7 +70,6 @@ zstar
 
 
 # Sample size
-
 
 
 ```{r}
@@ -123,3 +121,6 @@ cat("This is a ",Conf,"% confidence interval.")
 
 ```
 
+#  Solve for sample size
+
+You write it!
