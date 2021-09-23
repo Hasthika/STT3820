@@ -109,7 +109,7 @@ mu0 <- 10 #This is the value in H0 : mu = mu0
 #### Step 2:  Calcualte the standardized test statistic {-}
 ```{r}
 # Step 2:  Calcualte the standardized test statistic
-tstat <- 1.76 #(ybar - mu0)/(s/sqrt(n))
+tstat <- (ybar - mu0)/(s/sqrt(n))
 
 cat("The t-stat is",tstat)
 ```
@@ -119,7 +119,7 @@ cat("The t-stat is",tstat)
 ```{r}
 #P-value = P(get what you got or more when Ho is true)
 
-df <- 24 #n - 1 # degrees of freedom
+df <- n - 1 # degrees of freedom
 
 #less
 LTPval<- pt(tstat,df)
@@ -150,7 +150,7 @@ list(Less=LTPval,Greater=GTPval,NotEqual=NEPval)
 
 You write it!
 
-```{r eval=FALSE, include=FALSE}
+```{r}
 CIlev <- .95
 s <- 29.31
 ME <- 0.02
