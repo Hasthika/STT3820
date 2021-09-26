@@ -1,0 +1,92 @@
+---
+title: "R codes for Ch 20 PART I: Two Proportions"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    toc: true
+    highlight: textmate
+    theme: yeti
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
+#library(tidyverse)
+```
+
+> **_NOTE:_**  Use this script for Ch20, ONLY if the question talks about **two proportions**
+
+# Checking assumptions
+
+  1) Independent data
+  2) Randomization
+  3) Less than 10\% of the population is in the sample
+  4) Success/Failure ($np\geq 10$, $n(1-p) \geq 10$)
+  5) Independent Groups
+
+If assumptions are met, $\hat{p_1} - \hat{p_2} \sim N(p_1-p_2, \sqrt{\frac{(p_1(1-p_1)}{n_1} +\frac{p_2(1-p_2)}{n_2)}})$
+
+# CI for $p_1-p_2$
+
+```{r}
+phat1 <- 46/103 # or percent if given
+n1 <-103
+
+phat2 <- 64/111 # or percent if given
+n2<-111
+
+phat1 - phat2
+
+
+ConfLev <- .98
+alpha <- 1-ConfLev
+alphaover2 <- alpha/2
+oneminusalphaover2 <- 1-alphaover2
+zstar <- qnorm(oneminusalphaover2)
+
+
+SE <- sqrt(phat1*(1-phat1)/n1 + phat2*(1-phat2)/n2)
+#ME <- zstar*SE
+
+Low <- phat1 - phat2 - zstar*SE
+UP <-phat1 - phat2 + zstar*SE
+
+cat("The ",ConfLev*100,"% confidence interval is (",Low,",",UP,").")
+  
+```
+
+# HT for $p_1-p_2$
+
+```{r}
+Successes1 <- 0.3*60
+n1 <- 60
+
+phat1 <- Successes1/n1
+
+Successes2 <- .25*40
+n2 <- 40
+
+phat2 <- Successes2/n2
+
+
+SE <- sqrt(phat1*(1-phat1)/n1 + phat2*(1-phat2)/n2)
+
+zstat <- (phat1 - phat2)/SE
+
+cat("The standardized test statistic is",zstat)
+
+#P-value = P(get what you got or more when Ha is true)
+
+#less than
+LTPval<-pnorm(zstat)
+#greater than
+GTPval<-1-pnorm(zstat)
+#not equal
+NEPval<-2*pnorm(-abs(zstat))
+
+
+list(LessPval=LTPval,GreaterPval=GTPval,NotEqualPval=NEPval)
+```
+
+

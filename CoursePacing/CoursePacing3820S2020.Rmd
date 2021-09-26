@@ -30,30 +30,47 @@ MathJax.Hub.Config({
 
 * [Intro R codes](../Lecture Notes/IntroR.html)
 * [Intro R Homework](../Lecture Notes/IntroRHW.html)
-* [Chapter 16 R codes](../Lecture Notes/Ch16_New_CI_proportions.html)
+* [Chapter 16 R codes](../Lecture Notes/Ch16_New_CI_proportions.html) - CI for $p$
 
 ***
 
 ## Week 3 (Aug 30--Sep 3) {-}
 
-* [Chapter 16 R codes](../Lecture Notes/Ch16_New_CI_proportions.html)
+* [Chapter 16 R codes](../Lecture Notes/Ch16_New_CI_proportions.html) - CI for $p$
 
 ***
 
 ## Week 4 (Sep 06--Sep 10) {-}
 
-* [Chapter 16 R codes](../Lecture Notes/Ch16_New_CI_proportions.html)
-* [Chapter 17 R codes](../Lecture Notes/Ch17_New_mean.html)
+* [Chapter 16 R codes](../Lecture Notes/Ch16_New_CI_proportions.html) - CI for $p$
+* [Chapter 17 R codes](../Lecture Notes/Ch17_New_mean.html) - CI for $\mu$
 
 ***
 
 ## Week 5 (Sep 13--Sep 17) {-}
 
 
-* [Chapter 17 R codes](../Lecture Notes/Ch17_New_mean.html)
-* [Chapter 18 R codes](../Lecture Notes/Ch18_New_HT_P_Mean.html)
+* [Chapter 17 R codes](../Lecture Notes/Ch17_New_mean.html) - CI for $\mu$
+* [Chapter 18 R codes](../Lecture Notes/Ch18_New_HT_P_Mean.html) - HT for $p$ and HT for $\mu$
 
 ***
+
+## Week 6 (Sep 20--Sep 24) {-}
+
+
+* [Chapter 17 R codes](../Lecture Notes/Ch17_New_mean.html) - CI for $\mu$
+* [Chapter 18 R codes](../Lecture Notes/Ch18_New_HT_P_Mean.html) - HT for $p$ and HT for $\mu$
+
+***
+
+
+## Week 7 (Sep 27--Oct 01) {-}
+
+* [Chapter 20 R codes: PART I](../Lecture Notes/Ch20_New_CI_HT_two_p.html) - CI \& HT for $p_1 - p_2$
+* [Chapter 20 R codes: PART II](../Lecture Notes/Ch20_New_CI_HT_two_means.html) -  CI and HT for $\mu_1 - \mu_2$
+
+***
+
 
 <!--
 * [R codes for Ch 17 Proportions](../Lecture Notes/Ch17_proportions.html)
