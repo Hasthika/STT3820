@@ -166,7 +166,7 @@ pre code {
 
 <h1 class="title toc-ignore">R codes for Ch 20 PART I: Two Proportions</h1>
 <h4 class="author">Dr. Hasthika Rupasinghe</h4>
-<h4 class="date">Sep 26, 2021 at 12:36:56 PM</h4>
+<h4 class="date">Sep 27, 2021 at 09:05:39 PM</h4>
 
 </div>
 
@@ -194,15 +194,20 @@ pre code {
 </div>
 <div id="ci-for-p_1-p_2" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> CI for <span class="math inline">\(p_1-p_2\)</span></h1>
-<pre class="r"><code>phat1 &lt;- 46/103 # or percent if given
-n1 &lt;-103
+<pre class="r"><code>Successes1 &lt;- 20
+n1 &lt;- 60
 
-phat2 &lt;- 64/111 # or percent if given
-n2&lt;-111
+phat1 &lt;- Successes1/n1
+
+Successes2 &lt;- 25
+n2 &lt;- 40
+
+phat2 &lt;- Successes2/n2
+
 
 phat1 - phat2</code></pre>
-<pre><code>[1] -0.1299746</code></pre>
-<pre class="r"><code>ConfLev &lt;- .98
+<pre><code>[1] -0.2916667</code></pre>
+<pre class="r"><code>ConfLev &lt;- .95
 alpha &lt;- 1-ConfLev
 alphaover2 &lt;- alpha/2
 oneminusalphaover2 &lt;- 1-alphaover2
@@ -216,46 +221,11 @@ Low &lt;- phat1 - phat2 - zstar*SE
 UP &lt;-phat1 - phat2 + zstar*SE
 
 cat(&quot;The &quot;,ConfLev*100,&quot;% confidence interval is (&quot;,Low,&quot;,&quot;,UP,&quot;).&quot;)</code></pre>
-<pre><code>The  98 % confidence interval is ( -0.2877368 , 0.02778752 ).</code></pre>
+<pre><code>The  95 % confidence interval is ( -0.4833335 , -0.09999984 ).</code></pre>
 </div>
 <div id="ht-for-p_1-p_2" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> HT for <span class="math inline">\(p_1-p_2\)</span></h1>
-<pre class="r"><code>Successes1 &lt;- 0.3*60
-n1 &lt;- 60
-
-phat1 &lt;- Successes1/n1
-
-Successes2 &lt;- .25*40
-n2 &lt;- 40
-
-phat2 &lt;- Successes2/n2
-
-
-SE &lt;- sqrt(phat1*(1-phat1)/n1 + phat2*(1-phat2)/n2)
-
-zstat &lt;- (phat1 - phat2)/SE
-
-cat(&quot;The standardized test statistic is&quot;,zstat)</code></pre>
-<pre><code>The standardized test statistic is 0.552579</code></pre>
-<pre class="r"><code>#P-value = P(get what you got or more when Ha is true)
-
-#less than
-LTPval&lt;-pnorm(zstat)
-#greater than
-GTPval&lt;-1-pnorm(zstat)
-#not equal
-NEPval&lt;-2*pnorm(-abs(zstat))
-
-
-list(LessPval=LTPval,GreaterPval=GTPval,NotEqualPval=NEPval)</code></pre>
-<pre><code>$LessPval
-[1] 0.7097241
-
-$GreaterPval
-[1] 0.2902759
-
-$NotEqualPval
-[1] 0.5805517</code></pre>
+<p>You write it!</p>
 </div>
 
 

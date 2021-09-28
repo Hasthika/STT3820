@@ -30,16 +30,22 @@ If assumptions are met, $\hat{p_1} - \hat{p_2} \sim N(p_1-p_2, \sqrt{\frac{(p_1(
 # CI for $p_1-p_2$
 
 ```{r}
-phat1 <- 46/103 # or percent if given
-n1 <-103
 
-phat2 <- 64/111 # or percent if given
-n2<-111
+Successes1 <- 20
+n1 <- 60
+
+phat1 <- Successes1/n1
+
+Successes2 <- 25
+n2 <- 40
+
+phat2 <- Successes2/n2
+
 
 phat1 - phat2
 
 
-ConfLev <- .98
+ConfLev <- .95
 alpha <- 1-ConfLev
 alphaover2 <- alpha/2
 oneminusalphaover2 <- 1-alphaover2
@@ -58,14 +64,16 @@ cat("The ",ConfLev*100,"% confidence interval is (",Low,",",UP,").")
 
 # HT for $p_1-p_2$
 
-```{r}
-Successes1 <- 0.3*60
-n1 <- 60
+You write it!
+
+```{r eval=FALSE, include=FALSE}
+Successes1 <- 182
+n1 <- 969
 
 phat1 <- Successes1/n1
 
-Successes2 <- .25*40
-n2 <- 40
+Successes2 <- 185
+n2 <- 1240
 
 phat2 <- Successes2/n2
 

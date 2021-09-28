@@ -166,7 +166,7 @@ pre code {
 
 <h1 class="title toc-ignore">R codes for Ch 20 PART II: Two Means</h1>
 <h4 class="author">Dr. Hasthika Rupasinghe</h4>
-<h4 class="date">Sep 26, 2021 at 12:39:09 PM</h4>
+<h4 class="date">Sep 27, 2021 at 09:06:19 PM</h4>
 
 </div>
 
@@ -193,51 +193,26 @@ pre code {
 </div>
 <div id="ci-for-mu_1-mu_2" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> CI for <span class="math inline">\(\mu_1-\mu_2\)</span></h1>
-<pre class="r"><code>ybar1 &lt;- 12.4
-s1 &lt;- 3.9
-n1 &lt;- 14
-
-ybar2 &lt;- 13.6
-s2 &lt;- 5.2
-n2 &lt;- 17
-
-df &lt;- (s1^2/n1 +s2^2/n2)^2/(1/(n1-1)*(s1^2/n1)^2 + 1/(n2-1)*(s2^2/n2)^2)
-
-CIlev &lt;- .95
-
-alpha &lt;- 1-CIlev
-alphaovertwo &lt;- alpha/2
-oneminusalphaovertwo &lt;- 1- alpha/2
-tstar &lt;- qt(oneminusalphaovertwo,df)
-
-tstar  #tstar in a CI formula</code></pre>
-<pre><code>[1] 2.045877</code></pre>
-<pre class="r"><code>LowP &lt;- ybar1-ybar2 - tstar * sqrt(s1^2/n1 +s2^2/n2)
-UpP &lt;- ybar1-ybar2 + tstar * sqrt(s1^2/n1 +s2^2/n2)
-
-CI &lt;- c(LowP,UpP)
-
-cat(&quot;The &quot;, CIlev*100, &quot; % confidence interval for mu is&quot;, CI)</code></pre>
-<pre><code>The  95  % confidence interval for mu is -4.54738 2.14738</code></pre>
+<p>You write it!</p>
 </div>
 <div id="ht-for-mu_1-mu_2" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> HT for <span class="math inline">\(\mu_1-\mu_2\)</span></h1>
-<pre class="r"><code>ybar1 &lt;- 12.4
-s1 &lt;- 3.9
-n1 &lt;- 14
+<pre class="r"><code>ybar1 &lt;- 45
+s1 &lt;- 20
+n1 &lt;- 81
 
-ybar2 &lt;- 13.6
-s2 &lt;- 5.2
-n2 &lt;- 17
+ybar2 &lt;- 52
+s2 &lt;- 18
+n2 &lt;- 77
 
 df &lt;- (s1^2/n1 +s2^2/n2)^2/(1/(n1-1)*(s1^2/n1)^2 + 1/(n2-1)*(s2^2/n2)^2)
 
 cat(&quot;Degees of freedom is&quot;, df, &quot;\n&quot;)</code></pre>
-<pre><code>Degees of freedom is 28.79033 </code></pre>
+<pre><code>Degees of freedom is 155.5423 </code></pre>
 <pre class="r"><code>tstat &lt;- (ybar1-ybar2)/sqrt(s1^2/n1 +s2^2/n2)
 
 cat(&quot;The t-stat is&quot;, tstat, &quot;\n&quot;)</code></pre>
-<pre><code>The t-stat is -0.733425 </code></pre>
+<pre><code>The t-stat is -2.314627 </code></pre>
 <pre class="r"><code>#less
 LTPval&lt;- pt(tstat, df)
 
@@ -250,13 +225,13 @@ NEPval&lt;-2*pt(-abs(tstat), df)
 
 list(LessPval=LTPval,GreaterPval=GTPval,NotEqualPval=NEPval)</code></pre>
 <pre><code>$LessPval
-[1] 0.2346149
+[1] 0.01097063
 
 $GreaterPval
-[1] 0.7653851
+[1] 0.9890294
 
 $NotEqualPval
-[1] 0.4692298</code></pre>
+[1] 0.02194125</code></pre>
 </div>
 
 

@@ -28,14 +28,16 @@ If assumptions are met, $\bar{x_1} - \bar{x_2} \sim N(\mu_1-\mu_2, \sqrt{(s_1^2/
 
 # CI for $\mu_1-\mu_2$
 
-```{r}
-ybar1 <- 12.4
-s1 <- 3.9
-n1 <- 14
+You write it!
 
-ybar2 <- 13.6
-s2 <- 5.2
-n2 <- 17
+```{r eval=FALSE, include=FALSE}
+ybar1 <- 44
+s1 <- 21
+n1 <- 80
+
+ybar2 <- 52
+s2 <- 18
+n2 <- 80
 
 df <- (s1^2/n1 +s2^2/n2)^2/(1/(n1-1)*(s1^2/n1)^2 + 1/(n2-1)*(s2^2/n2)^2)
 
@@ -60,13 +62,13 @@ cat("The ", CIlev*100, " % confidence interval for mu is", CI)
 # HT for $\mu_1-\mu_2$
 
 ```{r}
-ybar1 <- 12.4
-s1 <- 3.9
-n1 <- 14
+ybar1 <- 45
+s1 <- 20
+n1 <- 81
 
-ybar2 <- 13.6
-s2 <- 5.2
-n2 <- 17
+ybar2 <- 52
+s2 <- 18
+n2 <- 77
 
 df <- (s1^2/n1 +s2^2/n2)^2/(1/(n1-1)*(s1^2/n1)^2 + 1/(n2-1)*(s2^2/n2)^2)
 
