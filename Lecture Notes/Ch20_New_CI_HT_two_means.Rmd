@@ -28,16 +28,16 @@ If assumptions are met, $\bar{x_1} - \bar{x_2} \sim N(\mu_1-\mu_2, \sqrt{(s_1^2/
 
 # CI for $\mu_1-\mu_2$
 
-You write it!
+You wrote it!
 
-```{r eval=FALSE, include=FALSE}
-ybar1 <- 44
-s1 <- 21
-n1 <- 80
+```{r}
+ybar1 <- 28.1
+s1 <- 3.93
+n1 <- 31
 
-ybar2 <- 52
-s2 <- 18
-n2 <- 80
+ybar2 <- 25.98
+s2 <- 2.79
+n2 <- 32
 
 df <- (s1^2/n1 +s2^2/n2)^2/(1/(n1-1)*(s1^2/n1)^2 + 1/(n2-1)*(s2^2/n2)^2)
 
@@ -50,7 +50,7 @@ tstar <- qt(oneminusalphaovertwo,df)
 
 tstar  #tstar in a CI formula
 
-LowP <- ybar1-ybar2 - tstar * sqrt(s1^2/n1 +s2^2/n2)
+LowP <- (ybar1-ybar2) - tstar * sqrt(s1^2/n1 +s2^2/n2)
 UpP <- ybar1-ybar2 + tstar * sqrt(s1^2/n1 +s2^2/n2)
 
 CI <- c(LowP,UpP)
@@ -91,4 +91,20 @@ NEPval<-2*pt(-abs(tstat), df)
 list(LessPval=LTPval,GreaterPval=GTPval,NotEqualPval=NEPval)
 ```
 
+# If you had data insted of the summary statitics:
+
+Change the top part of the script (CI or HT) as shown bellow to get the summary statistics.  
+
+```{r}
+heat2 <- c(105.9,106.4,106.4,106.5,107,108.8,109.6,115.3)
+heat7 <- c(106.1,106.1,106.4,106.9,108.4,108.5,117.5)
+
+ybar1 <- mean(heat2)
+s1 <- sd(heat2) 
+n1 <- length(heat2)
+
+ybar2 <- mean(heat7)
+s2 <- sd(heat7) 
+n2 <- length(heat7)
+```
 

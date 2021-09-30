@@ -166,7 +166,7 @@ pre code {
 
 <h1 class="title toc-ignore">R codes for Ch 20 PART II: Two Means</h1>
 <h4 class="author">Dr. Hasthika Rupasinghe</h4>
-<h4 class="date">Sep 27, 2021 at 09:06:19 PM</h4>
+<h4 class="date">Sep 30, 2021 at 01:25:46 PM</h4>
 
 </div>
 
@@ -175,6 +175,7 @@ pre code {
 <li><a href="#checking-assumptions"><span class="toc-section-number">1</span> Checking assumptions</a></li>
 <li><a href="#ci-for-mu_1-mu_2"><span class="toc-section-number">2</span> CI for <span class="math inline">\(\mu_1-\mu_2\)</span></a></li>
 <li><a href="#ht-for-mu_1-mu_2"><span class="toc-section-number">3</span> HT for <span class="math inline">\(\mu_1-\mu_2\)</span></a></li>
+<li><a href="#if-you-had-data-insted-of-the-summary-statitics"><span class="toc-section-number">4</span> If you had data insted of the summary statitics:</a></li>
 </ul>
 </div>
 
@@ -193,7 +194,33 @@ pre code {
 </div>
 <div id="ci-for-mu_1-mu_2" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> CI for <span class="math inline">\(\mu_1-\mu_2\)</span></h1>
-<p>You write it!</p>
+<p>You wrote it!</p>
+<pre class="r"><code>ybar1 &lt;- 28.1
+s1 &lt;- 3.93
+n1 &lt;- 31
+
+ybar2 &lt;- 25.98
+s2 &lt;- 2.79
+n2 &lt;- 32
+
+df &lt;- (s1^2/n1 +s2^2/n2)^2/(1/(n1-1)*(s1^2/n1)^2 + 1/(n2-1)*(s2^2/n2)^2)
+
+CIlev &lt;- .95
+
+alpha &lt;- 1-CIlev
+alphaovertwo &lt;- alpha/2
+oneminusalphaovertwo &lt;- 1- alpha/2
+tstar &lt;- qt(oneminusalphaovertwo,df)
+
+tstar  #tstar in a CI formula</code></pre>
+<pre><code>[1] 2.004887</code></pre>
+<pre class="r"><code>LowP &lt;- (ybar1-ybar2) - tstar * sqrt(s1^2/n1 +s2^2/n2)
+UpP &lt;- ybar1-ybar2 + tstar * sqrt(s1^2/n1 +s2^2/n2)
+
+CI &lt;- c(LowP,UpP)
+
+cat(&quot;The &quot;, CIlev*100, &quot; % confidence interval for mu is&quot;, CI)</code></pre>
+<pre><code>The  95  % confidence interval for mu is 0.3936121 3.846388</code></pre>
 </div>
 <div id="ht-for-mu_1-mu_2" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> HT for <span class="math inline">\(\mu_1-\mu_2\)</span></h1>
@@ -232,6 +259,20 @@ $GreaterPval
 
 $NotEqualPval
 [1] 0.02194125</code></pre>
+</div>
+<div id="if-you-had-data-insted-of-the-summary-statitics" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> If you had data insted of the summary statitics:</h1>
+<p>Change the top part of the script (CI or HT) as shown bellow to get the summary statistics.</p>
+<pre class="r"><code>heat2 &lt;- c(105.9,106.4,106.4,106.5,107,108.8,109.6,115.3)
+heat7 &lt;- c(106.1,106.1,106.4,106.9,108.4,108.5,117.5)
+
+ybar1 &lt;- mean(heat2)
+s1 &lt;- sd(heat2) 
+n1 &lt;- length(heat2)
+
+ybar2 &lt;- mean(heat7)
+s2 &lt;- sd(heat7) 
+n2 &lt;- length(heat7)</code></pre>
 </div>
 
 
