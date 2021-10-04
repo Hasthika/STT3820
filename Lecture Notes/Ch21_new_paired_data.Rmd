@@ -1,0 +1,104 @@
+---
+title: "R codes for Ch 23: Paired Data"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    toc: true
+    highlight: textmate
+    theme: yeti
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
+#library(tidyverse)
+```
+
+> **_NOTE:_**  Use this script for Ch22 ONLY if the question talks about two **dependent** groups
+
+
+# CI for $\mu_d = \mu_{after}-\mu_{before}$
+
+You write it!
+
+```{r eval = FALSE, include=FALSE}
+before <- c(717, 1242, 1338)
+after <- c(567, 1189, 1127)
+
+d <- after - before
+d
+
+dbar <- mean(d) # this is the mean of the differences
+sOfd <- sd(d) # this is the sd of the differences
+nd <- length(d) # this is the sample size of the differences
+
+df <- nd-1
+
+CIlev <- .95
+
+alpha <- 1-CIlev
+alphaovertwo <- alpha/2
+oneminusalphaovertwo <- 1- alpha/2
+tstar <- qt(oneminusalphaovertwo,df)
+
+tstar #tstar in a CI formula
+
+Low <- dbar - tstar * sOfd/sqrt(nd)
+Up <- dbar + tstar * sOfd/sqrt(nd)
+
+CI <- c(Low,Up)
+
+cat("The ", CIlev*100, " % confidence interval for (mu_after - mu_before) is", CI)
+  
+```
+
+# HT for $\mu_d = \mu_{after}-\mu_{before}$
+
+You write it!
+
+```{r eval = FALSE, include=FALSE}
+# before <- c(717,1242, 1338)
+# after <- c(567, 1189, 1127)
+#
+# d <- after - before
+# d
+
+dbar <- 57.3 #mean(d)
+sOfd <-  194.844 #sd(d)
+nd <-  10 #length(d)
+
+df <- nd-1
+
+#Step 1: Formulate the hypothesis
+HoMean <- 0
+
+#Step 2: Find the test statistics
+tstat <- (dbar-HoMean)/(sOfd/sqrt(nd))
+tstat
+
+#Step 3: Find the pvalue
+
+#less than
+LTPval<-pt(tstat, df)
+#greater than
+GTPval<-1-pt(tstat, df)
+#not equal
+NEPval<-2*pt(-abs(tstat), df)
+
+
+
+list(LessPval=LTPval,GreaterPval=GTPval,NotEqualPval=NEPval)
+
+#Step 4: conclusion
+#Statistical conclusion: A) Reject Ho if P-val < alpha (use .05 if none given)
+#                         B) Fail to reject Ho if P-val > alpha
+
+#English conclusion: A) There IS evidence of Ha (written to match problem)
+#                     B) There is NOT evidence of Ha.
+
+
+
+```
+
+
