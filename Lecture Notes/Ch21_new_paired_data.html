@@ -166,7 +166,7 @@ pre code {
 
 <h1 class="title toc-ignore">R codes for Ch 23: Paired Data</h1>
 <h4 class="author">Dr. Hasthika Rupasinghe</h4>
-<h4 class="date">Oct 04, 2021 at 02:50:36 PM</h4>
+<h4 class="date">Oct 05, 2021 at 01:04:14 PM</h4>
 
 </div>
 
@@ -182,11 +182,79 @@ pre code {
 </blockquote>
 <div id="ci-for-mu_d-mu_after-mu_before" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> CI for <span class="math inline">\(\mu_d = \mu_{after}-\mu_{before}\)</span></h1>
-<p>You write it!</p>
+<p>You wrote it!</p>
+<pre class="r"><code>dbar &lt;- 7.41#mean(d) # this is the mean of the differences
+sOfd &lt;- 2.49#sd(d) # this is the sd of the differences
+nd &lt;- 626#length(d) # this is the sample size of the differences
+
+df &lt;- nd-1
+
+CIlev &lt;- .95
+
+alpha &lt;- 1-CIlev
+alphaovertwo &lt;- alpha/2
+oneminusalphaovertwo &lt;- 1- alpha/2
+tstar &lt;- qt(oneminusalphaovertwo,df)
+
+tstar #tstar in a CI formula</code></pre>
+<pre><code>[1] 1.963767</code></pre>
+<pre class="r"><code>Low &lt;- dbar - tstar * sOfd/sqrt(nd)
+Up &lt;- dbar + tstar * sOfd/sqrt(nd)
+
+CI &lt;- c(Low,Up)
+
+cat(&quot;The &quot;, CIlev*100, &quot; % confidence interval for (mu_after - mu_before) is&quot;, CI)</code></pre>
+<pre><code>The  95  % confidence interval for (mu_after - mu_before) is 7.214565 7.605435</code></pre>
 </div>
 <div id="ht-for-mu_d-mu_after-mu_before" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> HT for <span class="math inline">\(\mu_d = \mu_{after}-\mu_{before}\)</span></h1>
-<p>You write it!</p>
+<p>You wrote it!</p>
+<pre class="r"><code>local &lt;- c(971,602,884,1193,810,975,1198,1191,740,744)
+online &lt;- c(1174,587,942,1163,480,1049,1039,1000,470,891)
+
+d &lt;- local - online
+d</code></pre>
+<pre><code> [1] -203   15  -58   30  330  -74  159  191  270 -147</code></pre>
+<pre class="r"><code>dbar &lt;- mean(d)
+sOfd &lt;-  sd(d)
+nd &lt;-  length(d)
+
+
+
+#Step 1: Formulate the hypothesis
+HoMean &lt;- 0
+
+#Step 2: Find the test statistics
+tstat &lt;- (dbar-HoMean)/(sOfd/sqrt(nd))
+tstat</code></pre>
+<pre><code>[1] 0.9036881</code></pre>
+<pre class="r"><code>#Step 3: Find the pvalue
+df &lt;- nd-1
+
+#less than
+LTPval&lt;-pt(tstat, df)
+#greater than
+GTPval&lt;-1-pt(tstat, df)
+#not equal
+NEPval&lt;-2*pt(-abs(tstat), df)
+
+
+
+list(LessPval=LTPval,GreaterPval=GTPval,NotEqualPval=NEPval)</code></pre>
+<pre><code>$LessPval
+[1] 0.8051459
+
+$GreaterPval
+[1] 0.1948541
+
+$NotEqualPval
+[1] 0.3897082</code></pre>
+<pre class="r"><code>#Step 4: conclusion
+#Statistical conclusion: A) Reject Ho if P-val &lt; alpha (use .05 if none given)
+#                         B) Fail to reject Ho if P-val &gt; alpha
+
+#English conclusion: A) There IS evidence of Ha (written to match problem)
+#                     B) There is NOT evidence of Ha.</code></pre>
 </div>
 
 

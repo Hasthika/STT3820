@@ -20,18 +20,13 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align =
 
 # CI for $\mu_d = \mu_{after}-\mu_{before}$
 
-You write it!
+You wrote it!
 
-```{r eval = FALSE, include=FALSE}
-before <- c(717, 1242, 1338)
-after <- c(567, 1189, 1127)
+```{r}
 
-d <- after - before
-d
-
-dbar <- mean(d) # this is the mean of the differences
-sOfd <- sd(d) # this is the sd of the differences
-nd <- length(d) # this is the sample size of the differences
+dbar <- 7.41#mean(d) # this is the mean of the differences
+sOfd <- 2.49#sd(d) # this is the sd of the differences
+nd <- 626#length(d) # this is the sample size of the differences
 
 df <- nd-1
 
@@ -55,20 +50,20 @@ cat("The ", CIlev*100, " % confidence interval for (mu_after - mu_before) is", C
 
 # HT for $\mu_d = \mu_{after}-\mu_{before}$
 
-You write it!
+You wrote it!
 
-```{r eval = FALSE, include=FALSE}
-# before <- c(717,1242, 1338)
-# after <- c(567, 1189, 1127)
-#
-# d <- after - before
-# d
+```{r}
+local <- c(971,602,884,1193,810,975,1198,1191,740,744)
+online <- c(1174,587,942,1163,480,1049,1039,1000,470,891)
 
-dbar <- 57.3 #mean(d)
-sOfd <-  194.844 #sd(d)
-nd <-  10 #length(d)
+d <- local - online
+d
 
-df <- nd-1
+dbar <- mean(d)
+sOfd <-  sd(d)
+nd <-  length(d)
+
+
 
 #Step 1: Formulate the hypothesis
 HoMean <- 0
@@ -78,6 +73,7 @@ tstat <- (dbar-HoMean)/(sOfd/sqrt(nd))
 tstat
 
 #Step 3: Find the pvalue
+df <- nd-1
 
 #less than
 LTPval<-pt(tstat, df)

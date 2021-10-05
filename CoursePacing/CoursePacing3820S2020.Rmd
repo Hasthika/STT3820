@@ -71,6 +71,12 @@ MathJax.Hub.Config({
 
 ***
 
+## Week 7 (Oct 04--Oct 08) {-}
+
+* [Chapter 21 R codes](../Lecture Notes/Ch21_new_paired_data.html) - CI \& HT for 
+ $\mu_d = \mu_1 - \mu_2$
+
+***
 
 <!--
 * [R codes for Ch 17 Proportions](../Lecture Notes/Ch17_proportions.html)
