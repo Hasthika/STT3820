@@ -166,7 +166,7 @@ pre code {
 
 <h1 class="title toc-ignore">R codes for Ch 20 PART I: Two Proportions</h1>
 <h4 class="author">Dr. Hasthika Rupasinghe</h4>
-<h4 class="date">Sep 27, 2021 at 09:05:39 PM</h4>
+<h4 class="date">Oct 07, 2021 at 11:47:25 AM</h4>
 
 </div>
 
@@ -226,6 +226,43 @@ cat(&quot;The &quot;,ConfLev*100,&quot;% confidence interval is (&quot;,Low,&quo
 <div id="ht-for-p_1-p_2" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> HT for <span class="math inline">\(p_1-p_2\)</span></h1>
 <p>You write it!</p>
+<pre class="r"><code>Successes1 &lt;- 182
+n1 &lt;- 969
+
+phat1 &lt;- Successes1/n1
+
+Successes2 &lt;- 185
+n2 &lt;- 1240
+
+phat2 &lt;- Successes2/n2
+
+phat1 - phat2</code></pre>
+<pre><code>[1] 0.03862895</code></pre>
+<pre class="r"><code>SE &lt;- sqrt(phat1*(1-phat1)/n1 + phat2*(1-phat2)/n2)
+
+zstat &lt;- (phat1 - phat2)/SE
+
+cat(&quot;The standardized test statistic is&quot;,zstat)</code></pre>
+<pre><code>The standardized test statistic is 2.396624</code></pre>
+<pre class="r"><code>#P-value = P(get what you got or more when Ha is true)
+
+#less than
+LTPval&lt;-pnorm(zstat)
+#greater than
+GTPval&lt;-1-pnorm(zstat)
+#not equal
+NEPval&lt;-2*pnorm(-abs(zstat))
+
+
+list(LessPval=LTPval,GreaterPval=GTPval,NotEqualPval=NEPval)</code></pre>
+<pre><code>$LessPval
+[1] 0.9917265
+
+$GreaterPval
+[1] 0.008273454
+
+$NotEqualPval
+[1] 0.01654691</code></pre>
 </div>
 
 
