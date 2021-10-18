@@ -90,12 +90,15 @@ MathJax.Hub.Config({
 
 * **Mid Term Project** - Due Tuesday, Oct 26, by 4:00 p.m.
     * [Mid Term Project Description](../Lecture Notes/MidTermProjectDescription.pdf)
+    
     * Data Files
       * [Student Debt Data File](../Lecture Notes/MEANSTUDENTLOANDEBTBYCATEGORY.CSV)
         * [Student Debt data description](../Lecture Notes/StudentDebt.pdf)
       
       * [Marriage and Divorce Data](../Lecture Notes/MarDiv2009.xls)
         * [No description for this data set]()
+        
+    * [Peer Evaluation Form](../Lecture Notes/PeerEval_Form_3820.pdf)
 
 ***
 
