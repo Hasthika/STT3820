@@ -78,6 +78,28 @@ MathJax.Hub.Config({
 
 ***
 
+## Week 8 (Oct 11--Oct 15) {-}
+
+* [Chapter 21 R codes](../Lecture Notes/Ch21_new_paired_data.html) - CI \& HT for 
+ $\mu_d = \mu_1 - \mu_2$
+* Exam 1
+
+***
+
+## Week 9 (Oct 18--Oct 22) {-}
+
+* **Mid Term Project** - Due Tuesday, Oct 26, by 4:00 p.m.
+    * [Mid Term Project Description](../Lecture Notes/MidTermProjectDescription.pdf)
+    * Data Files
+      * [Student Debt Data File](../Lecture Notes/MEANSTUDENTLOANDEBTBYCATEGORY.CSV)
+        * [Student Debt data description](../Lecture Notes/StudentDebt.pdf)
+      
+      * [Marriage and Divorce Data](../Lecture Notes/MarDiv2009.xls)
+        * [No description for this data set]()
+
+***
+
+
 <!--
 * [R codes for Ch 17 Proportions](../Lecture Notes/Ch17_proportions.html)
 * [R codes for Ch 17 Means](../Lecture Notes/Ch17_mean.html)

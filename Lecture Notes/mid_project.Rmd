@@ -1,0 +1,27 @@
+---
+title: "Mid Term Project"
+author: "Hasthika"
+date: "10/18/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readr)
+debt <- read_csv("Lecture Notes/MEANSTUDENTLOANDEBTBYCATEGORY.CSV")
+#View(debt)
+
+attach(debt) #allows you to just use the names of columns
+names(debt) #gives names of columns
+
+
+plot(Year,LessThanHS,type="o",col="red",pch=20,lty=1,ylab="Dollars",ylim=c(0,40000),main="Good Title") #overlaid points and connected lines
+
+points(Year,HSGrad,type="o",col="blue",pch=18,lty=2)
+
+legend(1990,40000,c("LessThanHS","SomeCollege"),cex=.7,pch=c(20,18),pt.cex=1.5,col=c("red","blue"))
+```
+
