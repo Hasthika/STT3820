@@ -1,0 +1,171 @@
+---
+title: "R codes for Ch 23 (with raw data)"
+author: "Dr. Hasthika Rupasinghe"
+date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
+output:
+  bookdown::html_document2:
+    toc: true
+    highlight: textmate
+    theme: yeti
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, fig.align = "center", comment = NA)
+
+```
+
+> **_NOTE:_**  Use this script for Ch23, ONLY if the question uses raw data
+
+# Checking assumptions
+
+```{r}
+AtlReg <- read.csv("AtlantaRegression.csv")
+AtlReg
+
+# Figure out what your x and y are
+x <- AtlReg$Distance
+y <- AtlReg$Fare
+
+############################################################################
+# Checking Assumption 1:
+############################################################################
+
+# Create a scatterplot of x vs. y
+plot(x, y, xlab="Distance", ylab="Fare", main = "Scatterplot of Fare vs. Distance", col = "red")
+
+# Find the correlation between x and y
+r <- cor(x,y)
+r
+
+# Find the R^2 value
+Rsquared <- cor(x,y)^2
+Rsquared
+
+# Everything looks good? 
+
+############################################################################
+# Checking Assumption 2 and 3:
+############################################################################
+
+# We have to create the linear model to get the residual plot
+# we use the lm function to create the linear model
+
+model <- lm(y ~ x) 
+
+# It is time to examine the residual
+
+plot(x, model$residuals) # residuals vs x - Residual plot
+
+# a better residual plot?
+library(MASS)
+stdresvals <- stdres(model) # standardized residuals
+plot(x, stdresvals) # This residual plot is easier to read than the previous
+
+############################################################################
+# Checking Assumption 4:
+############################################################################
+
+hist(model$residuals) # histogram of residuals - To check if residuals are normal
+
+qqnorm(model$residuals) # QQplot- To check if residuals are normal
+
+```
+
+ <a href="#top">Back to top</a>
+ 
+# More about the model
+
+```{r}
+AtlReg <- read.csv("AtlantaRegression.csv")
+AtlReg
+
+# Figure out what your x and y are
+x <- AtlReg$Distance
+y <- AtlReg$Fare
+
+model <- lm(y ~ x)
+
+# plot of x vs. y 
+plot(x, y, xlab="Distance", ylab="Fare", main = "Scatterplot of Fare vs. Distance", col = "red")
+
+#We can add the line to the plot as a visual aid
+abline(lm(y~x))
+
+summary(model)
+
+names(model)
+
+model$coefficients  #[1] is the intercept, [2] is the slope
+
+model$fitted.values
+model$residuals
+
+#--------------------------------------------------
+# Optional: Creating an easily read table of obsreved values, fits and residuals:
+
+numbers <- cbind(AtlReg[,3], model$fitted.values, model$residuals)
+colnames(numbers) <- c("Observed Fare", "Fits", "Residuals")
+rownames(numbers) <- AtlReg[,1]
+
+output <- as.table(numbers)
+output
+#--------------End Table---------------------------
+```
+
+ <a href="#top">Back to top</a>
+
+# Write out the model equation 
+
+```{r}
+summary(model) # Use this to get the coefficients
+```
+
+
+$$\hat{y} = 177.21452 + 0.07862 \times x$$
+$$\hat{Fare} = 177.21452 + 0.07862 \times Distance$$
+ <a href="#top">Back to top</a>
+ 
+# Hypothesis test for $\beta$'s
+
+```{r}
+model <- lm(y ~ x)
+summary(model)
+```
+
+ <a href="#top">Back to top</a>
+
+# CI for $\beta$'s
+
+```{r}
+model <- lm(y ~ x)
+
+confint(model, level=.95) # 95% CI for betas
+```
+
+ <a href="#top">Back to top</a>
+
+# PI for a new observation
+
+
+```{r}
+model <- lm(y ~ x)
+
+#prediction interval for the new observation 700
+predict(model, data.frame(x=700),interval="pred",level=.95) #prediction interval
+
+```
+
+ <a href="#top">Back to top</a>
+
+# CI for the mean value for a new observation
+
+```{r}
+model <- lm(y ~ x)
+
+#confidence interval for the new observation 700
+predict(model, data.frame(x=700),interval="conf",level=.95) #confidence interval
+```
+
+ <a href="#top">Back to top</a>
+
