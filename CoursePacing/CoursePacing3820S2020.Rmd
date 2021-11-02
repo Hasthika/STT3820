@@ -108,13 +108,17 @@ MathJax.Hub.Config({
 
 * [R codes for Ch 22](../Lecture Notes/Ch22_new_chi_sq.html) - $\chi^2$ test for Comparing Counts
 
-* [R codes for Ch 22 With data](../Lecture Notes/Ch23_new_linear_reg_data.html) - $\chi^2$ Inference for Regression with raw data
-* [R codes for Ch 22 With Summary](../Lecture Notes/Ch23_new_reg_summary.html) - $\chi^2$ Inference for Regression with summary stats
+* [R codes for Ch 23 With data](../Lecture Notes/Ch23_new_linear_reg_data.html) -  Inference for Regression with raw data
+* [R codes for Ch 23 With Summary](../Lecture Notes/Ch23_new_reg_summary.html) -  Inference for Regression with summary stats
 
 ***
 
+## Week 12: (Nov 1--5) {-}
 
+* [R codes for Ch 23 With data](../Lecture Notes/Ch23_new_linear_reg_data.html) -  Inference for Regression with raw data
+* [R codes for Ch 23 With Summary](../Lecture Notes/Ch23_new_reg_summary.html) -  Inference for Regression with summary stats
 
+***
 
 <!--
 * [R codes for Ch 17 Proportions](../Lecture Notes/Ch17_proportions.html)
