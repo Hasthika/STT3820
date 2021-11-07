@@ -24,9 +24,9 @@ You wrote it!
 
 ```{r}
 
-dbar <- 7.41#mean(d) # this is the mean of the differences
-sOfd <- 2.49#sd(d) # this is the sd of the differences
-nd <- 626#length(d) # this is the sample size of the differences
+dbar <- 3.7#mean(d) # this is the mean of the differences
+sOfd <- 4.945#sd(d) # this is the sd of the differences
+nd <- 10#length(d) # this is the sample size of the differences
 
 df <- nd-1
 

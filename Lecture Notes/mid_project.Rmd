@@ -10,12 +10,23 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
+
 library(readr)
 debt <- read_csv("Lecture Notes/MEANSTUDENTLOANDEBTBYCATEGORY.CSV")
-#View(debt)
+View(debt)
 
 attach(debt) #allows you to just use the names of columns
 names(debt) #gives names of columns
+
+
+
+
+
+
+
+
+
+
 
 
 plot(Year,LessThanHS,type="o",col="red",pch=20,lty=1,ylab="Dollars",ylim=c(0,40000),main="Good Title") #overlaid points and connected lines

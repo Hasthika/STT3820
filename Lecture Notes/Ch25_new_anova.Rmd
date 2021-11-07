@@ -1,5 +1,5 @@
 ---
-title: "R codes for Ch 26: ANOVA"
+title: "R codes for Ch 25: ANOVA"
 author: "Dr. Hasthika Rupasinghe"
 date: '`r format(Sys.time(), "%b %d, %Y at %X")`'
 output:
@@ -38,9 +38,9 @@ outputanovaACT
 
 # Assumptions check:
 
-## Independence - Check for randomization {-}
+## 1) Independence - Check for randomization {-}
 
-## Equal variance among the treatments - Check using Side by side Boxplots {-}
+## 2) Equal variance among the treatments - Check using Side by side Boxplots {-}
 
 ### Side by side Boxplots {-}
 
@@ -53,7 +53,7 @@ boxplot(values~ind,  # Specify the variables to graph, quantitative variable fir
 
 ```
 
-## Normal Errors {-}
+## 3) Normal Errors {-}
 
 ### Residual plot (Check for outliers) {-}
 ### Use a normal probability plot (qqplot) of the residuals or a histogram of the resduals {-}
@@ -63,25 +63,41 @@ plot(anovaACT) # Use only the first two plots (Residual plot and qqplot)
 ```
     
 
-
-
-
-`
-
-
 # Multiple comparisons (**After** you reject $H_0$)
 
 
 ```{r}
 TukeyHSD(aov(act$values~act$ind), conf.level=.95)
 ```
+# P-value from a $F$ Distribution
+
+```{r}
+Fstat <- 13.55
+
+numDf <- 3 # Treatment df
+denDf <- 8 # Error (or residual) df
+
+1-pf(Fstat, numDf, denDf)
+
+```
+
+# Critical Value from a $F$ Distribution
+
+```{r}
+alpha <- 0.05
+
+numDf <- 6 # Treatment df
+denDf <- 3 # Error (or residual) df
+
+qf(1-alpha, numDf, denDf)
+
+```
 
 
-# HW help
+# HW help (Problem No 17)
 
 ```{r}
 
-# HW#2, #7
 
 library(readxl)
 data7 <- read_excel("~/git_repositories/STT3820/Lecture Notes/data7.xlsx")
@@ -97,17 +113,7 @@ summary(anovadata)
 ```
 
 
-# P-value from a $F$ Distribution
 
-```{r}
-Fstat <- 13.55
-
-numDf <- 3 # Treatment df
-denDf <- 8 # Error (or residual) df
-
-1-pf(Fstat, numDf, denDf)
-
-```
 
 
 

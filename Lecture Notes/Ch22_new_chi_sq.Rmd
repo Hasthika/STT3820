@@ -40,11 +40,13 @@ plot(x,fx,type="l") #type = lines
 
 # Example in the notes-  grades = "A", "B", "C", "D", "F"
 
-obs <- c(89, 121, 78, 25, 12)
-exppercent <- c(0.15, 0.3, 0.4, 0.1, 0.05)
+obs <- c(27, 34, 31, 28)
+exppercent <- c(.25, .25, .25, .25)
 
 results <- chisq.test(obs,p=exppercent)
 results
+
+results$residuals
 
 ```
 
@@ -65,7 +67,7 @@ testtable <- as.table(shows)
 testtable
 
 results <- chisq.test(testtable)
-results
+results$expected
 
 ```
 

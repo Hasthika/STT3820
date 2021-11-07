@@ -87,7 +87,7 @@ sdxbar
 #less than for a normal
 #pnorm(value,mean,sd)
 
-pnorm(6, meanxbar, sdxbar)
+pnorm(31, meanxbar, sdxbar)
 
 #greater than for a normal
 #1-pnorm(value,mean,sd)
@@ -120,7 +120,7 @@ n <- length(lifeTime)
 
 CIlev <- .99
 
-df <- n-1
+df <- 24 #n-1
 
 alpha <- 1-CIlev
 alphaovertwo <- alpha/2

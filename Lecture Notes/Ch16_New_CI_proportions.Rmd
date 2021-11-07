@@ -103,6 +103,7 @@ pnorm(.06,meanphat,sdphat)
 
 1-pnorm(0.12,meanphat,sdphat)
 
+
 #between for a normal
 #pnorm(bigvalue,mean,sd)-pnorm(smallerval,mean,sd)
 
