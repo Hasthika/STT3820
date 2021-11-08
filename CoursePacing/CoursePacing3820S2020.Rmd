@@ -122,7 +122,7 @@ MathJax.Hub.Config({
 
 ## Week 13: (Nov 8--12) {-}
 
-* [Ch 25 Lecture Recording]()
+* Watch [Ch 25 Lecture Recording](https://youtu.be/TZejfWCiLto) and complete the note
 * [R codes for Ch 25](../Lecture Notes/Ch25_new_anova.html) -  ANOVA
 
 
